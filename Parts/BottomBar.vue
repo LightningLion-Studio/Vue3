@@ -1,16 +1,16 @@
 <template>
   <div class="bottom-bar">
     <n-icon>
-      <Home />
+      <Home16Regular />
     </n-icon>
   </div>
 </template>
 
 <script>
-import { Home } from '@vicons/ionicons5'
+import { Home16Regular } from '@vicons/fluent'
 export default {
   components: {
-    Home
+    Home16Regular
   },
 }
 </script>
@@ -20,5 +20,9 @@ export default {
   position: fixed;
   bottom: 0;
   width: 100%;
+  background: #fff;
+  padding: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 </style>
