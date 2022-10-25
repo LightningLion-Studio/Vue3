@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import { Home16Regular } from '@vicons/fluent'
+import { Home16Regular } from "@vicons/fluent";
 export default {
   components: {
-    Home16Regular
+    Home16Regular,
   },
-}
+};
 </script>
 
 <style lang="less">

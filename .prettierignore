@@ -1,0 +1,7 @@
+node_modules
+yarn.lock
+Public
+dist
+Dist
+vite.config.js
+*.json

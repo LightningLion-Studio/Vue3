@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import BottomBar from "@/Parts/BottomBar.vue"
+import BottomBar from "@/Parts/BottomBar.vue";
 
 export default {
   components: {
-    BottomBar
-  }
-}
+    BottomBar,
+  },
+};
 </script>
