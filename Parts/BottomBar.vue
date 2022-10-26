@@ -1,4 +1,4 @@
- <template>
+<template>
   <div class="bottom-bar">
     <div class="item">
       <n-icon size="24">
@@ -22,15 +22,10 @@
 </template>
 
 <script>
-import {
-  Home16Regular,
-  AppsAddIn16Regular
-} from "@vicons/fluent"
-import {
-  UserAvatar
-} from "@vicons/carbon"
+import { Home16Regular, AppsAddIn16Regular } from "@vicons/fluent"
+import { UserAvatar } from "@vicons/carbon"
 export default {
-  props: ['active'],
+  props: ["active"],
   data() {
     return {
       on: 0,
@@ -39,19 +34,19 @@ export default {
   components: {
     Home16Regular,
     AppsAddIn16Regular,
-    UserAvatar
+    UserAvatar,
   },
   watch: {
-    'this.active'() {
+    "this.active"() {
       if (this.active == 0) {
-        this.on =0
+        this.on = 0
       } else if (this.active == 1) {
         this.on = 1
       } else if (this.active == 2) {
         this.on = 2
       }
     },
-  }
+  },
 }
 </script>
 
