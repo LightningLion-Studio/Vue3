@@ -2,7 +2,7 @@ import axios from "../Utils/Axios"
 
 export async function GetPost() {
   return await axios({
-    method: "pos",
+    method: "get",
     url: "/post",
   })
 }
