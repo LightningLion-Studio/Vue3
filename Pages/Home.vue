@@ -1,6 +1,6 @@
 <template>
   <n-config-provider :theme="undefined">
-    <BottomBar />
+    <BottomBar on="0" />
   </n-config-provider>
 </template>
 
