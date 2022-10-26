@@ -9,8 +9,8 @@ import { darkTheme } from "naive-ui"
 export default {
   data() {
     return {
-      darkTheme
+      darkTheme,
     }
-  }
+  },
 }
 </script>
