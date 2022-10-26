@@ -1,22 +1,22 @@
-/carbon<template>
+ <template>
   <div class="bottom-bar">
     <div class="item">
       <n-icon size="24">
         <Home16Regular />
       </n-icon>
-      <div class="text">今天</div>
+      <div v-show="on === 0" class="text">今天</div>
     </div>
     <div class="item">
       <n-icon size="24">
         <AppsAddIn16Regular />
       </n-icon>
-      <div class="text">发现</div>
+      <div v-show="on === 1" class="text">发现</div>
     </div>
     <div class="item">
       <n-icon size="24">
-        <Home16Regular />
+        <UserAvatar />
       </n-icon>
-      <div class="text">我的</div>
+      <div v-show="on === 2" class="text">我的</div>
     </div>
   </div>
 </template>
@@ -28,18 +28,30 @@ import {
 } from "@vicons/fluent"
 import {
   UserAvatar
-} from "@vicons"
+} from "@vicons/carbon"
 export default {
   props: ['active'],
   data() {
     return {
-      
+      on: 0,
     }
   },
   components: {
     Home16Regular,
-    AppsAddIn16Regular
+    AppsAddIn16Regular,
+    UserAvatar
   },
+  watch: {
+    'this.active'() {
+      if (this.active == 0) {
+        this.on =0
+      } else if (this.active == 1) {
+        this.on = 1
+      } else if (this.active == 2) {
+        this.on = 2
+      }
+    },
+  }
 }
 </script>
 
