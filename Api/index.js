@@ -1,8 +1,8 @@
-import axios from "axios"
+import axios from "../Utils/Axios"
 
 export async function GetPost() {
   return await axios({
-    method: "post",
+    method: "pos",
     url: "/post",
   })
 }
