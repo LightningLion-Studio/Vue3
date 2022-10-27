@@ -49,6 +49,7 @@ export default {
   color: #fff;
   padding-top: 5px;
   padding-bottom: 5px;
+  border-top: 1px solid rgba(255,255,255,0.06);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   .item {
