@@ -1,40 +1,55 @@
 <template>
-  <div class="bottom-bar">
+  <div id="bar" class="bottom-bar">
     <div @click="go('/')" class="item">
       <n-icon size="24">
-        <Home16Regular />
+        <Home16Regular v-if="on !== 0" />
+        <Home16Filled v-if="on === 0" />
       </n-icon>
-      <div v-show="on == 0" class="text">今天</div>
+      <div v-if="show" v-show="on == 0" class="text">今天</div>
     </div>
     <div @click="go('/discover')" class="item">
       <n-icon size="24">
-        <AppsAddIn16Regular />
+        <Apps16Regular v-if="on !== 1" />
+        <Apps16Filled v-if="on === 1" />
       </n-icon>
-      <div v-show="on == 1" class="text">发现</div>
+      <div v-if="show" v-show="on == 1" class="text">发现</div>
     </div>
     <div @click="go('/user')" class="item">
       <n-icon size="24">
         <UserAvatar />
       </n-icon>
-      <div v-show="on == 2" class="text">我的</div>
+      <div v-if="show" v-show="on == 2" class="text">我的</div>
     </div>
   </div>
 </template>
 
 <script>
-import { Home16Regular, AppsAddIn16Regular } from "@vicons/fluent"
+import { Apps16Filled, Home16Filled, Home16Regular, Apps16Regular } from "@vicons/fluent"
 import { UserAvatar } from "@vicons/carbon"
 export default {
   props: ["on"],
   components: {
     Home16Regular,
-    AppsAddIn16Regular,
+    Apps16Regular,
+    Apps16Filled,
     UserAvatar,
+    Home16Filled,
+  },
+  data() {
+    return {
+      show: true
+    }
   },
   methods: {
     go(url) {
       this.$router.push(url)
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.show = false
+      document.querySelector("#bar").classList.add('active')
+    },3000)
   }
 }
 </script>
@@ -49,6 +64,7 @@ export default {
   color: #fff;
   padding-top: 5px;
   padding-bottom: 5px;
+  border-top: 1px solid rgba(255,255,255,0.06);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   .item {
@@ -60,5 +76,9 @@ export default {
       font-size: 10px;
     }
   }
+}
+.active {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 </style>
