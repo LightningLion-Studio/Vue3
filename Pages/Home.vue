@@ -1,24 +1,36 @@
 <template>
   <n-config-provider :theme="undefined">
-    <BottomBar on="0" />
+    <BottomBar :on="0" />
     
     <div class="padding">
-      <div class="day">
+      <n-text depth="3" class="day">
       {{ new Date().getMonth() }}月{{ new Date().getDate() }}日 {{ parseWeek() }}
-      </div>
+      </n-text>
       <n-h1 class="h1">
         心电社区
       </n-h1>
+      <HomeSwiper />
     </div>
   </n-config-provider>
 </template>
 
 <script>
+import HomeSwiper from "@/Parts/HomeSwiper.vue"
 import BottomBar from "@/Parts/BottomBar.vue"
 
 export default {
   components: {
-    BottomBar,
+    BottomBar, HomeSwiper
+  },
+  data() {
+    return {
+      on: 0,
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.on = 999
+    },3000)
   },
   methods: {
     parseWeek() {
@@ -45,7 +57,6 @@ export default {
 
 <style lang="less" scoped>
 .day {
-  color: #fff;
   margin-bottom: 0;
   padding-bottom: 0;
 }
