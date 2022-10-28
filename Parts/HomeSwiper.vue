@@ -1,17 +1,14 @@
 <template>
   <n-carousel>
-    <img
-      class="carousel-img"
-      src="/swiper.JPEG"
-    >
+    <img class="carousel-img" src="/swiper.JPEG" />
     <img
       class="carousel-img"
       src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
-    >
+    />
     <img
       class="carousel-img"
       src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
-    >
+    />
   </n-carousel>
 </template>
 

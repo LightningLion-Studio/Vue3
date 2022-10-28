@@ -24,7 +24,12 @@
 </template>
 
 <script>
-import { Apps16Filled, Home16Filled, Home16Regular, Apps16Regular } from "@vicons/fluent"
+import {
+  Apps16Filled,
+  Home16Filled,
+  Home16Regular,
+  Apps16Regular,
+} from "@vicons/fluent"
 import { UserAvatar } from "@vicons/carbon"
 export default {
   props: ["on"],
@@ -37,20 +42,20 @@ export default {
   },
   data() {
     return {
-      show: true
+      show: true,
     }
   },
   methods: {
     go(url) {
       this.$router.push(url)
-    }
+    },
   },
   mounted() {
     setTimeout(() => {
       this.show = false
-      document.querySelector("#bar").classList.add('active')
-    },3000)
-  }
+      document.querySelector("#bar").classList.add("active")
+    }, 3000)
+  },
 }
 </script>
 
@@ -58,13 +63,14 @@ export default {
 .bottom-bar {
   position: fixed;
   display: flex;
+  z-index: 999;
   justify-content: space-around;
   bottom: 0;
   width: 100%;
   color: #fff;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   .item {

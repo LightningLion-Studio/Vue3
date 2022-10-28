@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const request = axios.create({
-  baseURL: import.meta.env.VITE_APP_API,
+  baseURL: "/apis",
   timeout: 100000,
   auth: {
     username: import.meta.env.VITE_APP_ID,

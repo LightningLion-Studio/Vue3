@@ -12,4 +12,13 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./", import.meta.url)),
     },
   },
+  server: {
+    proxy: {
+      '/apis': {
+        target: "https://v2.api.light.xhhzs.cn/v2",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/apis/, '')
+      }
+    },
+  }
 });
