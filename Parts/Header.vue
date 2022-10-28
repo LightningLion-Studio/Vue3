@@ -45,5 +45,8 @@ export default {
     width: 100%;
     position: absolute;
   }
+  .left {
+    z-index: 999;
+  }
 }
 </style>

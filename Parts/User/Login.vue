@@ -9,7 +9,7 @@
       </n-form-item-row>
     </n-form>
     <div class="action">
-      <n-button quaternary type="info">忘记密码？</n-button>
+      <n-button size="large" quaternary type="info">忘记密码？</n-button>
       <n-button type="primary" size="large" circle>
         <template #icon>
           <n-icon>
