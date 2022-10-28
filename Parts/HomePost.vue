@@ -29,3 +29,9 @@ export default {
   },
 }
 </script>
+
+<style lang="less" scoped>
+.home-post .n-list {
+  border-radius: var(--radius);
+}
+</style>
