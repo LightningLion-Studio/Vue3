@@ -1,6 +1,7 @@
 <template>
   <div class="login">
     <BottomBar on="2" />
+    <Header>登录</Header>
 
     <div class="logo">
       <img src="/Assets/logo.png" />
@@ -37,9 +38,10 @@
 <script>
 import BottomBar from "@/Parts/BottomBar.vue"
 import Login from "@/Parts/User/Login.vue"
+import Header from "@/Parts/Header.vue"
 
 export default {
-  components: { BottomBar, Login },
+  components: { BottomBar, Login, Header },
 }
 </script>
 
@@ -54,7 +56,7 @@ export default {
 }
 .logo {
   width: 60%;
-  margin-top: 40px;
+  margin-top: 20vh;
 }
 .logo img {
   width: 100%;

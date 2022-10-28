@@ -8,13 +8,16 @@
         <n-input size="large" v-model="pass" placeholder="请输入密码" />
       </n-form-item-row>
     </n-form>
-    <n-button type="primary" size="large" circle>
-      <template #icon>
-        <n-icon>
-          <KeyboardArrowRightSharp />
-        </n-icon>
-      </template>
-    </n-button>
+    <div class="action">
+      <n-button quaternary type="info">忘记密码？</n-button>
+      <n-button type="primary" size="large" circle>
+        <template #icon>
+          <n-icon>
+            <KeyboardArrowRightSharp />
+          </n-icon>
+        </template>
+      </n-button>
+    </div>
   </div>
 </template>
 
@@ -37,3 +40,11 @@ export default {
   components: { KeyboardArrowRightSharp },
 }
 </script>
+
+<style lang="less" scoped>
+.action {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+</style>
