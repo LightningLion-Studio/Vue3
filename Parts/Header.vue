@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="left">
+    <div class="left" @click="back()">
       <n-icon size="35">
         <KeyboardArrowLeftRound />
       </n-icon>
@@ -15,6 +15,11 @@
 import { KeyboardArrowLeftRound } from "@vicons/material"
 
 export default {
+  methods: {
+    back() {
+      this.$router.go(-1)
+    },
+  },
   components: { KeyboardArrowLeftRound },
 }
 </script>
