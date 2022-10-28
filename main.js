@@ -15,6 +15,16 @@ import "./Assets/style.less"
 
 const app = createApp(App)
 
+import { createDiscreteApi, darkTheme } from "naive-ui"
+
+const { message } = createDiscreteApi(["message"], {
+  configProviderProps: {
+    theme: darkTheme,
+  },
+})
+
+app.config.globalProperties.$message = message
+
 app.use(createPinia())
 app.use(router)
 app.use(naive)

@@ -1,5 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router"
+import { createDiscreteApi, darkTheme } from "naive-ui"
 import empty from "@/Utils/Empty"
+
+const { message } = createDiscreteApi(["message"], {
+  configProviderProps: {
+    theme: darkTheme,
+  },
+})
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,10 +39,11 @@ const router = createRouter({
 router.beforeEach(to => {
   if (to.path == "/user") {
     if (empty(localStorage.getItem("token"))) {
+      message.warning("6")
       return { name: "Home" }
     }
   }
-  
+
   document.title = to.meta.title + " - 心电社区"
 })
 
