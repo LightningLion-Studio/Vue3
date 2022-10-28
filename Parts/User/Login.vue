@@ -10,7 +10,13 @@
     </n-form>
     <div class="action">
       <n-button size="large" quaternary type="info">忘记密码？</n-button>
-      <n-button type="primary" size="large" circle>
+      <n-button
+        :loading="loading"
+        @click="loginAction()"
+        type="primary"
+        size="large"
+        circle
+      >
         <template #icon>
           <n-icon>
             <KeyboardArrowRightSharp />
@@ -30,11 +36,19 @@ export default {
     return {
       name: "",
       pass: "",
+      loading: false,
     }
   },
   methods: {
     async loginAction() {
+      this.loading = true
       const data = await Login(this.name, this.pass)
+      if (data.data.code !== 200) {
+        this.$message.error(data.data.message)
+      } else {
+        this.$message.success(data.data.message)
+      }
+      this.loading = false
     },
   },
   components: { KeyboardArrowRightSharp },
