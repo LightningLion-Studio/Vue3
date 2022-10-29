@@ -1,5 +1,5 @@
 <template>
-  <n-carousel class="container">
+  <n-carousel autoplay class="container">
     <img class="carousel-img" src="/Assets/swiper.jpeg" />
     <img
       class="carousel-img"
