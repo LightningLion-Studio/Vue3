@@ -1,6 +1,12 @@
 import axios from "../Utils/Axios"
 const cookie = JSON.parse(localStorage.getItem("token"))
 
+/**
+ *
+ * 获取文口
+ * @author Zero
+ * @sice 2022
+ */
 export async function GetPost() {
   return await axios({
     method: "get",
@@ -9,6 +15,12 @@ export async function GetPost() {
   })
 }
 
+/**
+ *
+ * 获取话题
+ * @author Zero
+ * @since 2022
+ */
 export async function GetTopic() {
   return await axios({
     method: "get",
@@ -16,6 +28,12 @@ export async function GetTopic() {
   })
 }
 
+/**
+ *
+ * 登录
+ * @author Zero
+ * @since 2022
+ */
 export async function Login(username, password) {
   return await axios({
     method: "get",
@@ -27,6 +45,12 @@ export async function Login(username, password) {
   })
 }
 
+/**
+ *
+ * 获取用户信息
+ * @author Zero
+ * @since 2022
+ */
 export async function UserInfo() {
   console.log(cookie.token)
   return await axios({
