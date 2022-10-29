@@ -2,10 +2,15 @@
   <div class="login-part">
     <n-form>
       <n-form-item-row label="用户名">
-        <n-input size="large" v-model="name" placeholder="请输入用户名" />
+        <n-input size="large" v-model:value="name" placeholder="请输入用户名" />
       </n-form-item-row>
       <n-form-item-row label="密码">
-        <n-input size="large" v-model="pass" placeholder="请输入密码" />
+        <n-input
+          type="password"
+          size="large"
+          v-model:value="pass"
+          placeholder="请输入密码"
+        />
       </n-form-item-row>
     </n-form>
     <div class="action">
@@ -30,6 +35,7 @@
 <script>
 import { KeyboardArrowRightSharp } from "@vicons/material"
 import { Login } from "@/Api"
+import storage from "@/Utils/Storage"
 
 export default {
   data() {
@@ -47,6 +53,7 @@ export default {
         this.$message.error(data.data.message)
       } else {
         this.$message.success(data.data.message)
+        storage.json("token", data.data.data)
       }
       this.loading = false
     },

@@ -56,7 +56,7 @@ export default {
 }
 .logo {
   width: 60%;
-  margin-top: 20vh;
+  margin-top: 10vh;
 }
 .logo img {
   width: 100%;
