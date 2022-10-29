@@ -14,3 +14,14 @@ export async function GetTopic() {
     url: "/topic",
   })
 }
+
+export async function Login(username, password) {
+  return await axios({
+    method: "get",
+    params: {
+      username,
+      password,
+    },
+    url: "/newuser/login",
+  })
+}

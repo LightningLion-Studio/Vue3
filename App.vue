@@ -1,6 +1,10 @@
 <template>
   <n-config-provider :theme="darkTheme">
-    <router-view />
+    <router-view v-slot="{ Component }">
+      <transition appear mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </n-config-provider>
 </template>
 
@@ -14,3 +18,14 @@ export default {
   },
 }
 </script>
+
+<style>
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.35s;
+}
+</style>

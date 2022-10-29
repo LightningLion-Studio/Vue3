@@ -1,6 +1,6 @@
 <template>
-  <n-carousel>
-    <img class="carousel-img" src="/swiper.JPEG" />
+  <n-carousel class="container">
+    <img class="carousel-img" src="/Assets/swiper.jpeg" />
     <img
       class="carousel-img"
       src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
@@ -12,11 +12,13 @@
   </n-carousel>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .carousel-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+}
+.container {
+  border-radius: var(--radius);
 }
 </style>

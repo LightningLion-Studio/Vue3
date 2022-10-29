@@ -2,7 +2,7 @@
   <n-grid class="app-gird" x-gap="12" y-gap="12" :cols="2">
     <n-gi>
       <div class="item">
-        <img src="/bilibili.PNG" />
+        <img src="/Assets/bilibili.png" />
         <div class="right">
           <div class="title">腕上B站</div>
           <div class="desc">For Apple Watch</div>
@@ -11,7 +11,7 @@
     </n-gi>
     <n-gi>
       <div class="item">
-        <img src="/new.png" />
+        <img src="/Assets/new.png" />
         <div class="right">
           <div class="title">腕上RSS</div>
           <div class="desc">For Apple Watch</div>
@@ -20,7 +20,7 @@
     </n-gi>
     <n-gi>
       <div class="item">
-        <img src="/book.png" />
+        <img src="/Assets/book.png" />
         <div class="right">
           <div class="title">腕上小说</div>
           <div class="desc">For Apple Watch</div>
@@ -29,7 +29,7 @@
     </n-gi>
     <n-gi>
       <div class="item">
-        <img src="/bilibili.PNG" />
+        <img src="/Assets/music.jpeg" />
         <div class="right">
           <div class="title">腕上音乐</div>
           <div class="desc">For Apple Watch</div>
@@ -43,6 +43,7 @@
 .app-gird img {
   width: 30%;
   height: 100%;
+  border-radius: var(--radius);
 }
 .item {
   display: flex;

@@ -1,0 +1,1 @@
+import{r as t}from"./BottomBar.8d5e9c79.js";async function o(){return await t({method:"get",url:"/post",headers:{"Cache-Control":"no-cache"}})}async function n(e,r){return await t({method:"get",params:{username:e,password:r},url:"/newuser/login"})}export{o as G,n as L};
