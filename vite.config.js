@@ -4,6 +4,8 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
+
+/** @type {import('vite').UserConfig} */
 export default defineConfig({
   plugins: [vue()],
   publicDir: "Public",
@@ -14,6 +16,8 @@ export default defineConfig({
     },
   },
   server: {
+    host: "0.0.0.0",
+    port: "5173",
     proxy: {
       '/apis': {
         target: "https://v2.api.light.xhhzs.cn/v2",
@@ -24,5 +28,5 @@ export default defineConfig({
   },
   build: {
     outDir: "Dist",
-  }
+  },
 });
