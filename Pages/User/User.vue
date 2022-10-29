@@ -1,38 +1,44 @@
 <template>
-  <div class="user">
+  <div class="user" id="user">
+    <BottomBar on="2" />
     <div class="padding header">
-      <BottomBar on="2" />
-
-      <n-thing :title="info.name" :subtitle="info.saying">
+      <n-thing :content-indented="true" :title="info.name" :subtitle="info.saying"
+        >￼
         <template #description>
-        <n-space>
-          {{ info.saying }}
           <n-space>
-            <n-tag :bordered="false" type="primary">Lv {{ info.level }}</n-tag>
-            <n-tag v-if="info.level == 10">管理员</n-tag>
+            <n-tag size="large" :bordered="false" type="primary">
+              Lv {{ info.level }}
+            </n-tag>
+            <n-tag size="large" v-if="info.level == 10">
+              管理员
+            </n-tag>
           </n-space>
-        </n-space>
+          <div class="saying">{{ info.saying }}</div>
         </template>
-        <n-row>
-          <n-col :span="12">
-            <n-statistic label="已发布/草稿" :value="99">
-              <template #suffix> / 100 </template>
-            </n-statistic>
-          </n-col>
-          <n-col :span="12">
-            <n-statistic label="已关注/粉丝" :value="99">
-              <template #suffix> / 100 </template>
-            </n-statistic>
-          </n-col>
-        </n-row>
+
         <template #avatar>
-          <n-avatar :size="60" round>
-            <n-icon size="40">
+          <n-avatar :size="80" round>
+            <n-icon size="50">
               <User />
             </n-icon>
           </n-avatar>
         </template>
       </n-thing>
+
+      <n-grid>
+        <n-gi class="static" :span="6">
+          <n-statistic label="文章" :value="99"/>
+        </n-gi>
+        <n-gi class="static" :span="6">
+          <n-statistic label="草稿" :value="99"/>
+        </n-gi>
+        <n-gi class="static" :span="6">
+          <n-statistic label="粉丝" :value="99"/>
+        </n-gi>
+        <n-gi class="static" :span="6">
+          <n-statistic label="关注" :value="99"/>
+        </n-gi>
+      </n-grid>
     </div>
   </div>
 </template>
@@ -63,3 +69,19 @@ export default {
   components: { User, BottomBar },
 }
 </script>
+
+<style lang="less">
+@font:20px;
+#user {
+  .saying {
+    margin-top: 8px;
+    font-size: @font;
+  }
+  .n-thing .n-thing-main .n-thing-header .n-thing-header__title {
+    font-size: @font;
+  }
+  .static {
+    padding-left: 10px;
+  }
+}
+</style>
