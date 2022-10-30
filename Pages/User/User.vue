@@ -1,8 +1,11 @@
 <template>
   <div class="user" id="user">
+    <!--浮层组件-->
     <BottomBar on="2" />
     <n-drawer v-model:show="drawer" placement="bottom">
+      <DrawerContent />
     </n-drawer>
+    <!--头部-->
     <div class="padding header">
       <div class="option padding">
         <n-icon size="25" @click="switchDrawer">
@@ -57,6 +60,7 @@ import { UserInfo } from "@/Api"
 import { User } from "@vicons/carbon"
 import { MoreHorizontal16Regular } from "@vicons/fluent"
 import BottomBar from "@/Parts/BottomBar.vue"
+import DrawerContent from "./UserDrawer.vue"
 
 export default {
   data() {
@@ -65,8 +69,8 @@ export default {
         name: "",
         saying: "",
         level: "",
-        drawer: false,
       },
+      drawer: false,
     }
   },
   methods: {
@@ -82,7 +86,7 @@ export default {
     console.log(info)
     this.info = info.data.data
   },
-  components: { User, MoreHorizontal16Regular, BottomBar },
+  components: { User, MoreHorizontal16Regular, BottomBar, DrawerContent },
 }
 </script>
 
