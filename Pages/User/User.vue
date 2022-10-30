@@ -1,17 +1,20 @@
 <template>
   <div class="user" id="user">
     <BottomBar on="2" />
+    <n-drawer v-model:show="drawer" placement="bottom">
+    </n-drawer>
     <div class="padding header">
       <div class="option padding">
-        <n-icon size="25">
+        <n-icon size="25" @click="switchDrawer">
           <MoreHorizontal16Regular/>
         </n-icon>
       </div>
+      
       <n-thing
         :content-indented="true"
         :title="info.name"
         :subtitle="info.saying"
-        >￼
+        >
         <template #description>
           <n-space>
             <n-tag size="large" :bordered="false" type="primary">
@@ -62,7 +65,13 @@ export default {
         name: "",
         saying: "",
         level: "",
+        drawer: false,
       },
+    }
+  },
+  methods: {
+    switchDrawer() {
+      this.drawer = !this.drawer
     }
   },
   async mounted() {
