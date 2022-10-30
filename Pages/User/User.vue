@@ -1,38 +1,53 @@
 <template>
-  <div class="user">
-    <div class="padding header">
+  <div class="user" id="user">
     <BottomBar on="2" />
-      <n-page-header
+    <n-drawer v-model:show="drawer" placement="bottom">
+    </n-drawer>
+    <div class="padding header">
+      <div class="option padding">
+        <n-icon size="25" @click="switchDrawer">
+          <MoreHorizontal16Regular/>
+        </n-icon>
+      </div>
+      
+      <n-thing
+        :content-indented="true"
         :title="info.name"
-        @back="$router.go(-1)"
         :subtitle="info.saying"
-      >
-        <n-row>
-          <n-col :span="12">
-            <n-statistic label="已发布/草稿" :value="99">
-              <template #suffix> / 100 </template>
-            </n-statistic>
-          </n-col>
-          <n-col :span="12">
-            <n-statistic label="已关注/粉丝" :value="99">
-              <template #suffix> / 100 </template>
-            </n-statistic>
-          </n-col>
-        </n-row>
-        <template #header>
-          <n-space justify="space-between">
-            <n-tag :bordered="false" type="primary">Lv {{ info.level }}</n-tag>
-            <n-tag v-if="info.level == 10">管理员</n-tag>
+        >
+        <template #description>
+          <n-space>
+            <n-tag size="large" :bordered="false" type="primary">
+              Lv {{ info.level }}
+            </n-tag>
+            <n-tag size="large" v-if="info.level == 10"> 管理员 </n-tag>
           </n-space>
+          <div class="saying">{{ info.saying }}</div>
         </template>
+
         <template #avatar>
-          <n-avatar size="large" round>
-            <n-icon size="30">
+          <n-avatar :size="80" round>
+            <n-icon size="50">
               <User />
             </n-icon>
           </n-avatar>
         </template>
-      </n-page-header>
+      </n-thing>
+
+      <n-grid>
+        <n-gi class="static" :span="6">
+          <n-statistic label="文章" :value="99" />
+        </n-gi>
+        <n-gi class="static" :span="6">
+          <n-statistic label="草稿" :value="99" />
+        </n-gi>
+        <n-gi class="static" :span="6">
+          <n-statistic label="粉丝" :value="99" />
+        </n-gi>
+        <n-gi class="static" :span="6">
+          <n-statistic label="关注" :value="99" />
+        </n-gi>
+      </n-grid>
     </div>
   </div>
 </template>
@@ -40,6 +55,7 @@
 <script>
 import { UserInfo } from "@/Api"
 import { User } from "@vicons/carbon"
+import { MoreHorizontal16Regular } from "@vicons/fluent"
 import BottomBar from "@/Parts/BottomBar.vue"
 
 export default {
@@ -49,7 +65,13 @@ export default {
         name: "",
         saying: "",
         level: "",
+        drawer: false,
       },
+    }
+  },
+  methods: {
+    switchDrawer() {
+      this.drawer = !this.drawer
     }
   },
   async mounted() {
@@ -60,6 +82,31 @@ export default {
     console.log(info)
     this.info = info.data.data
   },
-  components: { User, BottomBar },
+  components: { User, MoreHorizontal16Regular, BottomBar },
 }
 </script>
+
+<style lang="less">
+@font: 20px;
+#user {
+  .saying {
+    margin-top: 8px;
+    font-size: @font;
+  }
+  .n-thing .n-thing-main .n-thing-header .n-thing-header__title {
+    font-size: @font;
+  }
+  .static {
+    padding-left: 10px;
+  }
+  .option {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+</style>
