@@ -61,3 +61,13 @@ export async function UserInfo() {
     },
   })
 }
+
+export async function CheckName(username) {
+  return await axios({
+    method: "get",
+    url: "/newuser/checkname",
+    params: {
+      username,
+    },
+  })
+}
