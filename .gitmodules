@@ -1,4 +1,3 @@
-[submodule "docs"]
-	path = docs
-	url = https://github.com/LightningLion-Studio/Docs.git
-	branch = master
+[submodule "Docs"]
+	path = Docs
+	url = https://github.com/LightningLion-Studio/Docs
