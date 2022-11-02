@@ -2,22 +2,25 @@
   <div class="user" id="user">
     <!--浮层组件-->
     <BottomBar on="2" />
-    <n-drawer v-model:show="drawer" placement="bottom">
+    <n-drawer :height="155" :show="drawer" placement="bottom">
       <DrawerContent />
+      <n-button @click="drawer = false" size="large" :bordered="false" block>
+        取消
+      </n-button>
     </n-drawer>
     <!--头部-->
     <div class="padding header">
       <div class="option padding">
-        <n-icon size="25" @click="switchDrawer">
-          <MoreHorizontal16Regular/>
+        <n-icon size="25" @click="drawer = true">
+          <MoreHorizontal16Regular />
         </n-icon>
       </div>
-      
+
       <n-thing
         :content-indented="true"
         :title="info.name"
         :subtitle="info.saying"
-        >
+      >
         <template #description>
           <n-space>
             <n-tag size="large" :bordered="false" type="primary">
@@ -73,11 +76,6 @@ export default {
       drawer: false,
     }
   },
-  methods: {
-    switchDrawer() {
-      this.drawer = !this.drawer
-    }
-  },
   async mounted() {
     const info = await UserInfo()
     if (info.data.code != 200) {
@@ -91,11 +89,14 @@ export default {
 </script>
 
 <style lang="less">
-@font: 20px;
+@font: 25px;
 #user {
   .saying {
     margin-top: 8px;
-    font-size: @font;
+    font-size: @font - 6px;
+  }
+  .n-thing {
+    margin-bottom: 10px;
   }
   .n-thing .n-thing-main .n-thing-header .n-thing-header__title {
     font-size: @font;

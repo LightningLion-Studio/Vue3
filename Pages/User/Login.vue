@@ -6,7 +6,7 @@
     <div class="logo">
       <img src="/Assets/logo.png" />
     </div>
-    <div style="width: 70%">
+    <div class="container">
       <n-tabs
         justify-content="space-evenly"
         default-value="signin"
@@ -16,20 +16,7 @@
         <n-tab-pane name="signin" tab="登录" class="log">
           <Login />
         </n-tab-pane>
-        <n-tab-pane name="signup" tab="注册">
-          <n-form>
-            <n-form-item-row label="用户名">
-              <n-input placeholder="请输入用户名" />
-            </n-form-item-row>
-            <n-form-item-row label="密码">
-              <n-input placeholder="请输入密码" />
-            </n-form-item-row>
-            <n-form-item-row label="重复密码">
-              <n-input placeholder="请重新输入密码" />
-            </n-form-item-row>
-          </n-form>
-          <n-button type="primary" block> 注册 </n-button>
-        </n-tab-pane>
+        <n-tab-pane name="signup" tab="注册"><Register /></n-tab-pane>
       </n-tabs>
     </div>
   </div>
@@ -38,14 +25,19 @@
 <script>
 import BottomBar from "@/Parts/BottomBar.vue"
 import Login from "@/Parts/User/Login.vue"
+import Register from "@/Parts/User/Register.vue"
 import Header from "@/Parts/Header.vue"
 
 export default {
-  components: { BottomBar, Login, Header },
+  components: { BottomBar, Login, Header, Register },
 }
 </script>
 
 <style lang="less" scoped>
+.login .container {
+  margin-bottom: 200px;
+  width: 70%;
+}
 .logo,
 .login {
   display: flex;
