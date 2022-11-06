@@ -2,9 +2,9 @@ import axios from "../Utils/Axios"
 const cookie = JSON.parse(localStorage.getItem("token"))
 
 /**
- *
  * 登录
- * @author Zero
+ *
+ * @author Zero <1203970294@qq.com>
  * @since 2022
  */
 export async function Login(username, password) {
@@ -19,9 +19,9 @@ export async function Login(username, password) {
 }
 
 /**
- *
  * 获取用户信息
- * @author Zero
+ *
+ * @author Zero <1203970294@qq.com>
  * @since 2022
  */
 export async function UserInfo() {

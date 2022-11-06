@@ -2,9 +2,9 @@ import axios from "../Utils/Axios"
 const cookie = JSON.parse(localStorage.getItem("token"))
 
 /**
- *
  * 获取话题
- * @author Zero
+ *
+ * @author Zero <1203970294@qq.com>
  * @since 2022
  */
 export async function GetTopic(order, limit, offset) {

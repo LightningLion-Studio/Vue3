@@ -1,4 +1,12 @@
 import axios from "axios"
+import { createDiscreteApi, darkTheme } from "naive-ui"
+import router from "../Router"
+
+const { message } = createDiscreteApi(["message"], {
+  configProviderProps: {
+    theme: darkTheme,
+  },
+})
 
 const request = axios.create({
   baseURL: "/apis",
@@ -9,6 +17,12 @@ const request = axios.create({
   },
 })
 
+/**
+ * 请求拦截器
+ *
+ * @author Zero <1203970294@qq.com>
+ * @since 2022
+ */
 request.interceptors.request.use(
   config => {
     // 在发送请求之前做些什么
@@ -20,11 +34,23 @@ request.interceptors.request.use(
   },
 )
 
+/**
+ *
+ * 回调拦截器
+ *
+ * @api
+ * @apiDescription 主要用来判断需要登录的接口是否已经登录
+ * @author Zero <1203970294@qq.com>
+ * @since 2022
+ */
 request.interceptors.response.use(
   response => {
     // 2xx 范围内的状态码都会触发该函数。
     // 对响应数据做点什么
-    console.log(response)
+    if (response.data.message == "您未登录 请先登录") {
+      message.error(response.data.message)
+      router.push("/")
+    }
     return response
   },
   error => {
