@@ -1,7 +1,6 @@
 <template>
   <div class="login">
-    <BottomBar on="2" />
-    <Header>登录</Header>
+    <Header>{{ title }}</Header>
 
     <div class="logo">
       <img src="/Assets/logo.png" />
@@ -10,7 +9,9 @@
       <n-tabs
         justify-content="space-evenly"
         default-value="signin"
+        @update:value="changeTitle(value)"
         size="large"
+        v-model:value="value"
         animated
       >
         <n-tab-pane name="signin" tab="登录" class="log">
@@ -23,13 +24,27 @@
 </template>
 
 <script>
-import BottomBar from "@/Parts/BottomBar.vue"
 import Login from "@/Parts/User/Login.vue"
 import Register from "@/Parts/User/Register.vue"
 import Header from "@/Parts/Header.vue"
 
 export default {
-  components: { BottomBar, Login, Header, Register },
+  data() {
+    return {
+      value: "signin",
+      title: "登录",
+    }
+  },
+  methods: {
+    changeTitle(value) {
+      if (value === "signin") {
+        this.title = "注册"
+      } else {
+        this.title = "登录"
+      }
+    },
+  },
+  components: { Login, Header, Register },
 }
 </script>
 

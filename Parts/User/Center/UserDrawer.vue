@@ -1,6 +1,6 @@
 <template>
-  <n-grid :x-gap="12" :y-gap="8" :cols="4">
-    <n-grid-item class="item">
+  <n-grid class="drawer-content" :x-gap="12" :y-gap="8" :cols="4">
+    <n-grid-item class="item" @click="logout()">
       <n-icons size="small">
         <Power20Filled />
       </n-icons>
@@ -26,13 +26,22 @@ import { Settings16Regular, Power20Filled } from "@vicons/fluent"
 import { MediaLibrary } from "@vicons/carbon"
 
 export default {
+  methods: {
+    logout() {
+      localStorage.removeItem("token")
+      this.$router.push("/")
+      this.$message.success("已退出登录")
+    },
+  },
   components: { Settings16Regular, Power20Filled, MediaLibrary },
 }
 </script>
 
 <style scoped lang="less">
-.item {
-  text-align: center;
-  padding: 20px;
+.drawer-content {
+  .item {
+    text-align: center;
+    margin: 22px;
+  }
 }
 </style>

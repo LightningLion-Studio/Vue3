@@ -52,6 +52,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.home {
+  padding-top: 18px;
+}
 .post {
   margin-top: 14px;
 }
