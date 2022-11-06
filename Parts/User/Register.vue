@@ -66,6 +66,7 @@
 
 <script>
 import { CheckName } from "@/Api"
+import empty from "@/Utils/Empty"
 export default {
   data() {
     return {
@@ -96,16 +97,23 @@ export default {
      * @since 2022
      */
     async change() {
-      if (!this.passwordChecker()) {
+      if (this.passwordChecker()) {
         this.registerButtonText = "请确保密码正确"
         return
+      } else {
+        this.registerButtonText = "注册"
       }
 
       this.nameLoading = true
-      const req = await CheckName(this.username)
+      const req = await CheckName(this.allValue.username)
       console.log(req)
+      this.nameLoading = false
       this.nametip = req.data.message
       if (req.data.code == 200) {
+        if (empty(this.allValue.email)) {
+          this.registerButtonText = "请填写邮箱"
+          return
+        }
         this.registerButton = false
         this.registerButtonText = "注册"
         this.nameStatus = ""
@@ -115,7 +123,6 @@ export default {
         this.$message.error(req.data.message)
         this.registerButtonText = req.data.message
       }
-      this.nameLoading = false
     },
     /**
      * 表单改变事件：两次密码是否输入正确
@@ -126,19 +133,11 @@ export default {
      * @since 2022
      */
     passwordChecker() {
-      if (this.password !== this.passwordRetry) {
+      if (this.allValue.password !== this.allValue.passwordRetry) {
         return false
-      } else if (
-        this.password == null ||
-        this.password == undefined ||
-        this.password == ""
-      ) {
+      } else if (empty(this.allValue.password)) {
         return false
-      } else if (
-        this.passwordRetry == null ||
-        this.passwordRetry == undefined ||
-        this.passwordRetry == ""
-      ) {
+      } else if (empty(this.allValue.passwordRetry)) {
         return false
       } else {
         return true
