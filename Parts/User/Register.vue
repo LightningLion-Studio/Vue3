@@ -25,10 +25,11 @@
         size="large"
         class="code-input"
         placeholder="请输入邮箱验证码"
+        :maxlength="6"
         v-model:value="allValue.code"
       >
         <template #suffix>
-          <n-button quaternary>
+          <n-button @click="send()" quaternary>
             {{ sendMailButtonText }}
           </n-button>
         </template>
@@ -40,6 +41,7 @@
         @change="change()"
         size="large"
         placeholder="请输入密码"
+        type="password"
       />
     </n-form-item-row>
     <n-form-item-row label="重复密码">
@@ -49,6 +51,7 @@
         size="large"
         placeholder="请重新输入密码"
         :status="passwordStatus"
+        type="password"
       />
     </n-form-item-row>
   </n-form>
@@ -65,8 +68,9 @@
 </template>
 
 <script>
-import { CheckName } from "@/Api"
+import { CheckName, SendMail, Register } from "@/Api"
 import empty from "@/Utils/Empty"
+import storage from "@/Utils/Storage"
 export default {
   data() {
     return {
@@ -97,22 +101,30 @@ export default {
      * @since 2022
      */
     async change() {
-      if (this.passwordChecker()) {
-        this.registerButtonText = "请确保密码正确"
-        return
-      } else {
-        this.registerButtonText = "注册"
-      }
-
       this.nameLoading = true
       const req = await CheckName(this.allValue.username)
       console.log(req)
       this.nameLoading = false
       this.nametip = req.data.message
       if (req.data.code == 200) {
+        // 检查邮箱是否为空
         if (empty(this.allValue.email)) {
           this.registerButtonText = "请填写邮箱"
+          this.registerButton = true
           return
+        }
+        // 检查验证码是否为空
+        if (empty(this.allValue.code)) {
+          this.registerButtonText = "请填写验证码"
+          this.registerButton = true
+          return
+        }
+        // 检查密码 见 `passwordChecker` 函数
+        if (!this.passwordChecker()) {
+          this.registerButtonText = "请确保密码正确"
+          return
+        } else {
+          this.registerButtonText = "注册"
         }
         this.registerButton = false
         this.registerButtonText = "注册"
@@ -151,6 +163,9 @@ export default {
      */
     async send() {
       this.sendMailButtonText = "正在发送"
+      const req = await SendMail(this.allValue.email)
+      this.$message.success(req.data.message)
+      this.sendMailButtonText = "重新发送"
     },
     /**
      * 注册
@@ -160,7 +175,18 @@ export default {
      * @since 2022
      */
     async action() {
-      let act
+      // 注册实例
+      let act = await Register({
+        username: this.allValue.username,
+        password: this.allValue.password,
+        email: this.allValue.email,
+        code: this.allValue.code,
+      })
+      this.$message.warning(act.data.message)
+      if (act.data.code == 200) {
+        storage.json("token", act.data.token)
+        this.$router.push("/user")
+      }
     },
   },
 }

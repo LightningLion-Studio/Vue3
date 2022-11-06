@@ -53,7 +53,7 @@ export async function CheckName(username) {
  * 注册：邮箱验证码
  *
  * @param {mail} String email
- * @author Zero <1203970294@qq.com>
+ * @author Zero <1203970284@qq.com>
  * @since 2022
  */
 export async function SendMail(email) {
@@ -69,16 +69,19 @@ export async function SendMail(email) {
 /**
  * 注册
  *
- * @author Zero <1203970294@qq.com>
+ * @param {data} Object username,password,email,code
+ * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function Register(username, password) {
+export async function Register(data) {
   return await axios({
-    method: "post",
+    method: "get",
     url: "/newuser/register",
-    data: {
-      username,
-      password,
+    params: {
+      username: data.username,
+      password: data.password,
+      email: data.email,
+      code: data.code,
     },
   })
 }
