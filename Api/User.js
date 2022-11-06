@@ -25,10 +25,7 @@ export async function Login(username, password) {
  * @since 2022
  */
 export async function UserInfo() {
-  console.log(cookie.token)
-  return await axios({
-    method: "get",
-    url: "/user",
+  return await axios.get("/user", {
     params: {
       cookie: cookie.token,
     },
