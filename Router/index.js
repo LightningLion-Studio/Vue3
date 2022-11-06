@@ -37,7 +37,7 @@ const router = createRouter({
     {
       name: "user",
       path: "/user",
-      component: () => import("@/Pages/User/User.vue"),
+      component: () => import("@/Pages/User/Center.vue"),
       meta: {
         title: "我的",
       },
