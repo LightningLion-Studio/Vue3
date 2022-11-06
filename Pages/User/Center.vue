@@ -39,6 +39,9 @@ export default {
 <style lang="less">
 @font: 25px;
 #user {
+  .padding.header {
+    padding: 6%;
+  }
   .saying {
     margin-top: 8px;
     font-size: @font - 6px;
