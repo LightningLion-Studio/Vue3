@@ -20,6 +20,14 @@ const router = createRouter({
       },
     },
     {
+      name: "app",
+      path: "/apps/:e",
+      component: () => import("@/Pages/Apps.vue"),
+      meta: {
+        title: "App",
+      },
+    },
+    {
       path: "/discover",
       component: () => import("@/Pages/Discover.vue"),
       meta: {

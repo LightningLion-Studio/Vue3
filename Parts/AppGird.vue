@@ -1,7 +1,7 @@
 <template>
   <n-grid class="app-gird" x-gap="12" y-gap="12" :cols="2">
     <n-gi>
-      <div class="item">
+      <div class="item" @click="to('/apps/bilibili')">
         <img src="/Assets/bilibili.png" />
         <div class="right">
           <div class="title">腕上B站</div>
@@ -38,6 +38,16 @@
     </n-gi>
   </n-grid>
 </template>
+
+<script>
+export default {
+  methods: {
+    to(e) {
+      this.$router.push(e)
+    }
+  }
+}
+</script>
 
 <style lang="less" scoped>
 .app-gird img {

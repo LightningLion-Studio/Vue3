@@ -1,9 +1,9 @@
-# 以下以一个构建vue项目的yml文件为例子
+# GitHub Action Auto Build
 name: CI 
 on:
   push:
     branches:
-      - master # 这里只配置了main分支，所以只有推送main分支才会触发以下任务
+      - master # PR
 jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }}
@@ -18,7 +18,7 @@ jobs:
           npm run build
 
       - name: Deploy   # 部署
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages # 部署后提交到那个分支
           folder: Dist # 这里填打包好的目录名称

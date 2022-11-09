@@ -1245,6 +1245,11 @@ make-dir@^2.1.0:
     pify "^4.0.1"
     semver "^5.6.0"
 
+md-editor-v3@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/md-editor-v3/-/md-editor-v3-2.4.1.tgz#1a9f28f0758844bf271362b14d5fd6b8961dc390"
+  integrity sha512-ORI1g4bQK+6NkTKriizqXYd0wtrchhP2bnnxS8u0P2UX8/A7kWBjb9jSUAqiTDVWpi8RrJ4/OyUh+Njb5krEEg==
+
 mime-db@1.52.0:
   version "1.52.0"
   resolved "https://registry.npmmirror.com/mime-db/-/mime-db-1.52.0.tgz#bbabcdc02859f4987301c856e3387ce5ec43bf70"
