@@ -1,5 +1,7 @@
 # lightlion_v2
 
+![npm](https://img.shields.io/github/package-json/v/LightningLion-Studio/Vue3?color=red&filename=package.json&label=Project%20Version&logo=npm)
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
