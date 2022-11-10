@@ -1,42 +1,44 @@
-# lightlion_v2
+# 心电社区前端项目
 
 ![npm](https://img.shields.io/github/package-json/v/LightningLion-Studio/Vue3?color=red&filename=package.json&label=Project%20Version&logo=npm)
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 运行
 
-## Customize configuration
+必须装有Node.js环境且安装了Yarn。
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (并且关闭Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)。
 
-## Project Setup
+## 自定义配置
+
+阅读 [Vite Configuration Reference](https://vitejs.dev/config/)。
+
+##启动项目
 
 ```sh
 yarn
 ```
 
-### Compile and Hot-Reload for Development
+### 本运行
 
 ```sh
 yarn dev
 ```
 
-### Compile and Minify for Production
+### 打包编译
 
 ```sh
 yarn build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### 单元测试，请参考 [Vitest](https://vitest.dev/)
 
 ```sh
 yarn test:unit
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### 格式化工具请参考 [ESLint](https://eslint.org/)
 
 ```sh
 yarn lint
