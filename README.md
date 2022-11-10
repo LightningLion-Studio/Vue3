@@ -1,7 +1,11 @@
 # 心电社区前端项目
 
-![npm](https://img.shields.io/github/package-json/v/LightningLion-Studio/Vue3?color=red&filename=package.json&label=Project%20Version&logo=npm)
-
+![Project Version](https://img.shields.io/github/package-json/v/LightningLion-Studio/Vue3?color=red&filename=package.json&label=Project%20Version&logo=npm)
+![Last Commit](https://img.shields.io/github/last-commit/LightningLion-Studio/Vue3?color=blue&logo=github&label=Last%20Cimmit)
+![Code size](https://img.shields.io/github/languages/code-size/LightningLion-Studio/Vue3?logo=javascript&label=Code%20Size)
+![Files Count](https://img.shields.io/github/directory-file-count/Lightninglion-Studio/Vue3?color=green&logo=files&label=Files)￼
+![License](https://img.shields.io/badge/License-Apache-red)
+![Pull Requests Closed](https://img.shields.io/github/issues-pr-closed/LightningLion-Studio/Vue3?logo=github&label=Pull%20Requests)
 
 
 ## 运行
