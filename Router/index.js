@@ -69,7 +69,7 @@ router.afterEach((to, from, failure) => {
   if (failure) {
     loadingBar.error()
     if (to.path == from.path) {
-      message.failure("错误")
+      message.error("您当前正处于此页面")
     }
     console.log(from)
   } else {
