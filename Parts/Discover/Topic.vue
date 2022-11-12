@@ -1,6 +1,6 @@
 <template>
   <div class="lister">
-    <n-card v-for="(item,index) in data" :title="item.title">
+    <n-card v-for="(item, index) in data" :title="item.title">
       {{ item.data }}
     </n-card>
   </div>
@@ -12,12 +12,12 @@ import { GetTopic } from "@/Api"
 export default {
   data() {
     return {
-      data: []
+      data: [],
     }
   },
   async mounted() {
     const list = await GetTopic(3)
     this.data = list.data.data
-  }
+  },
 }
 </script>
