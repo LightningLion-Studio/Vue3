@@ -15,7 +15,7 @@
           激活App
         </n-button>
       </n-space>
-      
+
       <n-modal v-model:show="showModal">
         <n-card
           style="width: 600px"
@@ -24,17 +24,17 @@
           role="dialog"
           aria-modal="true"
         >
-        <n-space justify="center">
-          <n-spin size="large" />
-          <div class="tip">正在跳转到App，请确保您已经成功安装腕上RSS...</div>
-          <n-button @click="re" ghost quaternary>
-            如果没有跳转请点击这里
-          </n-button>
+          <n-space justify="center">
+            <n-spin size="large" />
+            <div class="tip">正在跳转到App，请确保您已经成功安装腕上RSS...</div>
+            <n-button @click="re" text type="primary">
+              如果没有跳转请点击这里
+            </n-button>
           </n-space>
         </n-card>
       </n-modal>
 
-      <n-h2> 激活方法 </n-h2>
+      <n-h2>激活方法</n-h2>
       <n-collapse :default-expanded-names="1" accordion>
         <n-collapse-item
           v-for="(parent, i) in method1"
@@ -65,7 +65,7 @@
 <script>
 import { GetApp } from "@/Api"
 import { openBili, copyToClip } from "../Utils/Active"
-const isIos = /ipad|iPhone|Mac/i.test(window.navigator.userAgent)
+const isIos = /ipad|iPhone/i.test(window.navigator.userAgent)
 
 export default {
   data() {
@@ -79,11 +79,17 @@ export default {
     }
   },
   methods: {
+    // 跳转到腕B
     re() {
       copyToClip(() => {
-        openBili("watchrss://")
+        try {
+          openBili("watchrss://")
+        } catch (err) {
+          this.$message.error("打开失败")
+        }
       })
     },
+    // 激活
     async activitive() {
       const redict = () => {
         this.showModal = true
@@ -93,10 +99,10 @@ export default {
         if (!isIos) {
           this.$dialog.warning({
             title: "警告",
-            content: "检测到似乎是IOS设，可能会无法激活",
+            content: "检测到似乎是非iPhone，可能会无法激活",
             positiveText: "确定",
             negativeText: "取消",
-            onPositiveClick: redict(),
+            onPositiveClick: redict,
           })
         } else {
           redict()
