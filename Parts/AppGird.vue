@@ -44,8 +44,8 @@ export default {
   methods: {
     to(e) {
       this.$router.push(e)
-    }
-  }
+    },
+  },
 }
 </script>
 

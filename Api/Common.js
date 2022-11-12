@@ -5,7 +5,7 @@ export async function GetApp(name) {
     method: "get",
     url: "/app",
     params: {
-      name
-    }
+      name,
+    },
   })
 }

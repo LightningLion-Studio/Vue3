@@ -7,12 +7,11 @@
 ![License](https://img.shields.io/badge/License-Apache-red)
 ![Pull Requests Closed](https://img.shields.io/github/issues-pr-closed/LightningLion-Studio/Vue3?logo=github&label=Pull%20Requests)
 
-
 ## 运行
 
-必须装有Node.js环境且安装了Yarn。
+必须装有 Node.js 环境且安装了 Yarn。
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (并且关闭Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)。
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (并且关闭 Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)。
 
 ## 自定义配置
 

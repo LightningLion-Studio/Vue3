@@ -17,13 +17,14 @@ const app = createApp(App)
 
 import { createDiscreteApi, darkTheme } from "naive-ui"
 
-const { message } = createDiscreteApi(["message"], {
+const { message, dialog } = createDiscreteApi(["message", "dialog"], {
   configProviderProps: {
     theme: darkTheme,
   },
 })
 
 app.config.globalProperties.$message = message
+app.config.globalProperties.$dialog = dialog
 
 app.use(createPinia())
 app.use(router)
