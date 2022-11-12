@@ -138,6 +138,7 @@ a {
     height: 100%;
     margin-top: 60px;
     text-align: center;
+    border-radius: 18%;
   }
   .step-icon {
     font-style: normal;

@@ -53,7 +53,7 @@ export default {
 .app-gird img {
   width: 30%;
   height: 100%;
-  border-radius: var(--radius);
+  border-radius: var(--radius-percent);
 }
 .item {
   display: flex;
