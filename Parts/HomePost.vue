@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { GetPost } from "@/Api"
 
 export default {
@@ -22,7 +22,7 @@ export default {
     }
   },
   async mounted() {
-    const list = await GetPost()
+    const list:object = await GetPost()
     this.list = list.data.data
     this.load = false
     this.show = true

@@ -20,6 +20,7 @@
     "md-editor-v3": "^2.4.1",
     "naive-ui": "^2.33.5",
     "pinia": "^2.0.21",
+    "typescript": "^4.8.4",
     "vfonts": "^0.0.3",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5"

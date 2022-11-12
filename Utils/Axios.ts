@@ -8,7 +8,8 @@ const { message } = createDiscreteApi(["message"], {
   },
 })
 
-const request = axios.create({
+// @ts-ignore
+const request:any = axios.create({
   baseURL: "/apis",
   timeout: 100000,
   auth: {

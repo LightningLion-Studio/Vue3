@@ -3,5 +3,5 @@ yarn.lock
 Public/*
 dist
 Dist
-vite.config.js
+vite.config.ts
 *.json
