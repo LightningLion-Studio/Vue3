@@ -24,13 +24,11 @@
 </template>
 
 <script lang="ts">
-import {
-  Apps16Filled,
-  Home16Filled,
-  Home16Regular,
-  Apps16Regular,
-} from "@vicons/fluent"
-import { UserAvatar } from "@vicons/carbon"
+import Apps16Filled from "@vicons/fluent/Apps16Filled"
+import Home16Filled from "@vicons/fluent/Home16Filled"
+import Home16Regular from "@vicons/fluent/Home16Regular"
+import Apps16Regular from "@vicons/fluent/Apps16Regular"
+import UserAvatar from "@vicons/carbon/UserAvatar"
 export default {
   props: ["on"],
   components: {
