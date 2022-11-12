@@ -1,6 +1,6 @@
 import axios from "../Utils/Axios"
 
-export async function GetApp(name) {
+export async function GetApp(name):Promise {
   return await axios({
     method: "get",
     url: "/app",

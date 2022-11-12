@@ -35,7 +35,7 @@
       </n-modal>
 
       <n-h2>激活方法</n-h2>
-      <n-collapse :default-expanded-names="1" accordion>
+      <n-collapse :default-expanded-names="[1]" accordion>
         <n-collapse-item
           v-for="(parent, i) in method1"
           :key="i"
@@ -62,10 +62,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { GetApp } from "@/Api"
 import { openBili, copyToClip } from "../Utils/Active"
-const isIos = /ipad|iPhone/i.test(window.navigator.userAgent)
+const isIos:boolean = /ipad|iPhone/i.test(window.navigator.userAgent)
 
 export default {
   data() {
@@ -91,7 +91,7 @@ export default {
     },
     // 激活
     async activitive() {
-      const redict = () => {
+      const redict:Function = () => {
         this.showModal = true
         openBili("watchrss://")
       }
