@@ -1,5 +1,5 @@
 import axios from "../Utils/Axios"
-const cookie = JSON.parse(localStorage.getItem("token"))
+const cookie:Object = JSON.parse(localStorage.getItem("token"))
 
 /**
  * 获取文章接口
@@ -11,7 +11,7 @@ const cookie = JSON.parse(localStorage.getItem("token"))
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function GetPost(order, limit, offset) {
+export async function GetPost(order:Number, limit:Number, offset:Number) {
   return await axios({
     method: "get",
     url: "/post",

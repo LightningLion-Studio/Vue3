@@ -1,5 +1,8 @@
 import axios from "../Utils/Axios"
-const cookie = JSON.parse(localStorage.getItem("token"))
+interface cookie {
+	token: String
+}
+const cookie:Object = JSON.parse(localStorage.getItem("token"))
 
 /**
  * 登录
@@ -7,7 +10,7 @@ const cookie = JSON.parse(localStorage.getItem("token"))
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function Login(username, password) {
+export async function Login(username:String, password:String) {
   return await axios({
     method: "get",
     params: {
@@ -39,7 +42,7 @@ export async function UserInfo() {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function CheckName(username) {
+export async function CheckName(username:String) {
   return await axios({
     method: "get",
     url: "/newuser/checkname",
@@ -56,7 +59,7 @@ export async function CheckName(username) {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function SendMail(email) {
+export async function SendMail(email:String) {
   return await axios({
     method: "get",
     url: "/newuser/sendmail",
@@ -73,7 +76,7 @@ export async function SendMail(email) {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function Register(data) {
+export async function Register(data:Object) {
   return await axios({
     method: "get",
     url: "/newuser/register",
