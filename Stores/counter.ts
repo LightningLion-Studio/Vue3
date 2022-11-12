@@ -1,12 +1,14 @@
 import { defineStore } from "pinia"
 
-const useCounterStore = defineStore("counter", {
-  state: () => {
+const useCounterStore:Function = defineStore("counter", {
+  state: ():Object => {
     return {
       count: 0,
     }
   },
-  actions: {},
+  actions: {
+
+	},
 })
 
 export { useCounterStore }

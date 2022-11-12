@@ -71,7 +71,6 @@ router.afterEach((to, from, failure) => {
     if (to.path == from.path) {
       message.error("您当前正处于此页面")
     }
-    console.log(from)
   } else {
     loadingBar.finish()
   }

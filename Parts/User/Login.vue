@@ -54,6 +54,7 @@ export default {
       } else {
         this.$message.success(data.data.message)
         storage.json("token", data.data.data)
+        location.href = "/user"
       }
       this.loading = false
     },

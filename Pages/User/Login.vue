@@ -17,7 +17,9 @@
         <n-tab-pane name="signin" tab="登录" class="log">
           <Login />
         </n-tab-pane>
-        <n-tab-pane name="signup" tab="注册"><Register /></n-tab-pane>
+        <n-tab-pane name="signup" tab="注册">
+          <Register />
+        </n-tab-pane>
       </n-tabs>
     </div>
   </div>

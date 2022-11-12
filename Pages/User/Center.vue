@@ -1,7 +1,7 @@
 <template>
   <div id="user">
     <!--浮层组件-->
-    <BottomBar on="2" />
+    <BottomBar :on="2" />
     <n-drawer height="auto" :show="drawer" placement="bottom">
       <DrawerContent />
       <n-button @click="drawer = false" size="large" :bordered="false" block>
