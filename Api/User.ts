@@ -1,8 +1,7 @@
 import axios from "../Utils/Axios"
-interface cookie {
-	token: String
-}
-const cookie:Object = JSON.parse(localStorage.getItem("token"))
+import storage from "../Utils/Storage"
+let cookie = storage.parse("token")
+
 
 /**
  * 登录
@@ -10,7 +9,7 @@ const cookie:Object = JSON.parse(localStorage.getItem("token"))
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function Login(username:String, password:String) {
+export async function Login(username:String, password:String):Promise<Object> {
   return await axios({
     method: "get",
     params: {
@@ -76,7 +75,13 @@ export async function SendMail(email:String) {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function Register(data:Object) {
+interface RegisterParams {
+	username: String,
+	password: String,
+	email: String,
+	code: String
+}
+export async function Register(data:RegisterParams) {
   return await axios({
     method: "get",
     url: "/newuser/register",

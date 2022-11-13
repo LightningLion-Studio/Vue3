@@ -1,4 +1,5 @@
 import axios from "../Utils/Axios"
+// @ts-ignore
 const cookie:Object = JSON.parse(localStorage.getItem("token"))
 
 /**
@@ -11,7 +12,7 @@ const cookie:Object = JSON.parse(localStorage.getItem("token"))
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function GetPost(order:Number, limit:Number, offset:Number) {
+export async function GetPost(order:Number, limit:Number, offset:Number):Promise<Object> {
   return await axios({
     method: "get",
     url: "/post",
