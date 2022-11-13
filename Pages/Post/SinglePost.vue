@@ -1,21 +1,25 @@
 <template>
-  <div class="single-post padding">
-    <n-h2 prefix="bar" align-text>{{ data.title }}</n-h2>
-    <div id="page-content" v-html="data.data"></div>
+  <div class="single-post">
+    <Header :lefter="false" :autohide="true">{{ data.title }}</Header>
+    <div class="container padding">
+      <n-h2 prefix="bar" align-text>{{ data.title }}</n-h2>
+      <div id="page-content" v-html="data.data"></div>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, compile } from "vue"
+import { onMounted, ref } from "vue"
 import { useRoute } from "vue-router"
 import { useMessage } from "naive-ui"
 import { GetSinglePost } from "../../Api"
+import Header from "../../Parts/Header.vue"
 const route = useRoute()
 const message = useMessage()
 
 const data = ref({
   title: "666",
-  data: "<n-h1>444</n-h1>",
+  data: "",
 })
 
 /**
@@ -37,30 +41,32 @@ onMounted(async () => {
 </script>
 
 <style lang="less">
-#page-content {
-  color: #fff;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    a {
-      color: #fff;
-      text-decoration: none;
+.container {
+  #page-content {
+    color: #fff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      &:before {
+        content: " ";
+        background: #fff;
+        width: 10px;
+        position: absolute;
+      }
     }
-		&:before {
-			content: " ";
-			background: #fff;
-			width: 10px;
-			position: absolute;
-		}
-  }
-	p {
-		font-size: 18px;
-	}
-  img {
-    width: 100%;
+    p {
+      font-size: 18px;
+    }
+    img {
+      width: 100%;
+    }
   }
 }
 </style>
