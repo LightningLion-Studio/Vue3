@@ -1,7 +1,6 @@
 import axios from "../Utils/Axios"
 import storage from "../Utils/Storage"
-let cookie = storage.parse("token")
-
+const cookie = storage.parse("token")
 
 /**
  * 登录
@@ -9,7 +8,7 @@ let cookie = storage.parse("token")
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function Login(username:String, password:String):Promise<Object> {
+export async function Login(username:String, password:String):Promise<object> {
   return await axios({
     method: "get",
     params: {
@@ -26,7 +25,7 @@ export async function Login(username:String, password:String):Promise<Object> {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function UserInfo() {
+export async function UserInfo():Promise<object> {
   return await axios.get("/user", {
     params: {
       cookie: cookie.token,
@@ -37,11 +36,12 @@ export async function UserInfo() {
 /**
  * 注册：检查用户名是否重复
  *
- * @param {username} String 用户名
+ * @param username {string} 用户名
+ * @constructor
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function CheckName(username:String) {
+export async function CheckName(username:String):Promise<object> {
   return await axios({
     method: "get",
     url: "/newuser/checkname",
@@ -58,7 +58,7 @@ export async function CheckName(username:String) {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function SendMail(email:String) {
+export async function SendMail(email:String):Promise<object> {
   return await axios({
     method: "get",
     url: "/newuser/sendmail",
@@ -81,7 +81,7 @@ interface RegisterParams {
 	email: String,
 	code: String
 }
-export async function Register(data:RegisterParams) {
+export async function Register(data:RegisterParams):Promise<object> {
   return await axios({
     method: "get",
     url: "/newuser/register",

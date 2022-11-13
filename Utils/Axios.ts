@@ -8,12 +8,13 @@ const { message } = createDiscreteApi(["message"], {
   },
 })
 
-// @ts-ignore
 const request:any = axios.create({
   baseURL: "/apis",
   timeout: 100000,
   auth: {
+		// @ts-ignore
     username: import.meta.env.VITE_APP_ID,
+		// @ts-ignore
     password: import.meta.env.VITE_APP_SECRET,
   },
 })

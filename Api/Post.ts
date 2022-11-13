@@ -12,7 +12,7 @@ const cookie:Object = JSON.parse(localStorage.getItem("token"))
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function GetPost(order:Number, limit:Number, offset:Number):Promise<Object> {
+export async function GetPost(order:Number, limit:Number, offset:Number):Promise<object> {
   return await axios({
     method: "get",
     url: "/post",

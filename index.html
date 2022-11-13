@@ -2,6 +2,7 @@
 <html lang="zh-cn">
   <head>
     <meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <script src="https://unpkg.com/vconsole/dist/vconsole.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/eruda"></script>
     <script src="https://cdn.jsdelivr.net/npm/eruda-dom"></script>
@@ -15,7 +16,12 @@
     <title>心电社区</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div id="app">
+			<img id="loading-logo" src="/LightningCo_NoColor_Favicon.png" />
+			<style>
+				@import "/style.css";
+			</style>
+		</div>
+    <script type="module" src="/main.ts"></script>
   </body>
 </html>
