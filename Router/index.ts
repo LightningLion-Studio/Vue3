@@ -9,6 +9,7 @@ const { message, loadingBar } = createDiscreteApi(["message", "loadingBar"], {
 })
 
 const router = createRouter({
+  // @ts-ignore
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
