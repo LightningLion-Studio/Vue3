@@ -1,6 +1,6 @@
 <template>
-  <div class="header">
-    <div class="left" @click="back()">
+  <div class="header hide" id="header" ref="header">
+    <div class="left" @click="back()" v-if="left">
       <n-icon size="35">
         <KeyboardArrowLeftRound />
       </n-icon>
@@ -15,17 +15,45 @@
 import { KeyboardArrowLeftRound } from "@vicons/material"
 
 export default {
+  props: ["autohide", "lefter"],
+  data() {
+    return {
+      left: true,
+    }
+  },
   methods: {
     back() {
       this.$router.go(-1)
     },
+  },
+  mounted() {
+    if (this.autohide == true) {
+      addEventListener("scroll", () => {
+        if (document.documentElement.scrollTop < 300) {
+          this.$refs.header.classList.add("hide")
+        } else {
+          this.$refs.header.classList.remove("hide")
+        }
+      })
+    }
+    if (this.lefter == false) {
+      this.left = false
+    } else {
+      this.left = true
+    }
   },
   components: { KeyboardArrowLeftRound },
 }
 </script>
 
 <style lang="less" scoped>
+.header.hide {
+  transform: translateY(-50px);
+  transition: ease 0.2s;
+}
 .header {
+  transform: translateY(0);
+  transition: ease 0.2s;
   position: fixed;
   width: 100%;
   z-index: 999;
@@ -33,13 +61,15 @@ export default {
   display: flex;
   align-items: center;
   height: 45px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px) brightness(0.5);
+  -webkit-backdrop-filter: blur(10px) brightness(0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   font-size: 17px;
   color: #fff;
   box-shadow: 0 0 40px #00000052;
-  position: relative;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
   div {
     height: 100%;
     align-items: center;

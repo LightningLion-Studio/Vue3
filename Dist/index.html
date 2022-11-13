@@ -2,6 +2,7 @@
 <html lang="zh-cn">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <script src="https://unpkg.com/vconsole/dist/vconsole.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/eruda"></script>
     <script src="https://cdn.jsdelivr.net/npm/eruda-dom"></script>
@@ -10,14 +11,41 @@
       eruda.add(erudaDom)
       let vConsole = new window.VConsole()
     </script>
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>心电社区</title>
-    <script type="module" crossorigin src="./assets/index.b719a598.js"></script>
-    <link rel="stylesheet" href="./assets/index.90ade3b2.css">
+    <script type="module" crossorigin src="/assets/index.18224459.js"></script>
+    <link rel="stylesheet" href="/assets/index.03edc6b6.css">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <img id="loading-logo" src="/LightningCo_NoColor_Favicon.png" />
+      <style>@keyframes trans {
+	0% {
+		opacity: 0.4;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.4;
+	}
+}
+:root {
+	background: #242424;
+}
+#app {
+	padding: 30%;
+}
+#loading-logo {
+	width: 100%;
+	filter: grayscale(1);
+	opacity: 0.7;
+	animation: trans infinite 1.5s;
+	transition: ease 0.2s;
+}
+      </style>
+    </div>
     
   </body>
 </html>

@@ -1,11 +1,14 @@
 import axios from "../Utils/Axios"
 
-export async function GetApp(name):Promise {
+/**
+ *
+ * @param name
+ * @constructor
+ */
+export async function GetApp(name: string): Promise<object> {
   return await axios({
     method: "get",
     url: "/app",
-    params: {
-      name,
-    },
+    params: { name },
   })
 }

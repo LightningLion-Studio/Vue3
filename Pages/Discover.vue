@@ -1,6 +1,6 @@
 <template>
   <div class="discover">
-    <BottomBar on="1" />
+    <BottomBar :on="1" />
     <div class="padding">
       <n-h1> 发现 </n-h1>
     </div>

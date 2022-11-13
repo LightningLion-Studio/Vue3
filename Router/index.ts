@@ -9,6 +9,7 @@ const { message, loadingBar } = createDiscreteApi(["message", "loadingBar"], {
 })
 
 const router = createRouter({
+  // @ts-ignore
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -50,6 +51,14 @@ const router = createRouter({
         title: "我的",
       },
     },
+    {
+      name: "single",
+      path: "/post/:id",
+      component: () => import("@/Pages/Post/SinglePost.vue"),
+      meta: {
+        title: "文章详情",
+      },
+    },
   ],
 })
 
@@ -71,7 +80,6 @@ router.afterEach((to, from, failure) => {
     if (to.path == from.path) {
       message.error("您当前正处于此页面")
     }
-    console.log(from)
   } else {
     loadingBar.finish()
   }

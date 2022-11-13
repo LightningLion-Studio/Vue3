@@ -11,6 +11,7 @@ export default defineConfig({
   publicDir: "Public",
   resolve: {
     alias: {
+			// @ts-ignore
       "@": fileURLToPath(new URL("./", import.meta.url)),
     },
   },

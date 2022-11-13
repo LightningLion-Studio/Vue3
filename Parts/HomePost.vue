@@ -3,7 +3,7 @@
     <n-skeleton v-if="load" text :repeat="4" />
     <n-list v-if="show" hoverable clickable>
       <template #header> 文章 </template>
-      <n-list-item v-for="(item, index) in list" :key="index">
+      <n-list-item v-for="(item, index) in list" :key="index" @click="go(item.id)">
         <n-thing :title="item.title" title-extra="extra"> </n-thing>
       </n-list-item>
     </n-list>
@@ -22,11 +22,16 @@ export default {
     }
   },
   async mounted() {
-    const list:object = await GetPost()
+    const list: object = await GetPost()
     this.list = list.data.data
     this.load = false
     this.show = true
   },
+  methods: {
+    go(e) {
+      this.$router.push('/post/' + e)
+    }
+  }
 }
 </script>
 
