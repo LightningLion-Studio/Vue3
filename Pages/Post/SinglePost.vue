@@ -1,9 +1,7 @@
 <template>
   <div class="single-post padding">
     <n-h2 prefix="bar" align-text>{{ data.title }}</n-h2>
-    <div id="page-content" v-html="data.data">
-
-		</div>
+    <div id="page-content" v-html="data.data"></div>
   </div>
 </template>
 
@@ -30,7 +28,7 @@ async function requester() {
     message.error(request.data.message)
     return
   }
-	console.log(compile(data.value.data))
+  data.value = request.data.data
 }
 
 onMounted(async () => {
@@ -38,4 +36,31 @@ onMounted(async () => {
 })
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less">
+#page-content {
+  color: #fff;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+		&:before {
+			content: " ";
+			background: #fff;
+			width: 10px;
+			position: absolute;
+		}
+  }
+	p {
+		font-size: 18px;
+	}
+  img {
+    width: 100%;
+  }
+}
+</style>

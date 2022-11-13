@@ -13,7 +13,6 @@ export default defineConfig({
     alias: {
 			// @ts-ignore
       "@": fileURLToPath(new URL("./", import.meta.url)),
-			"vue$": "vue/dist/vue.esm-bundler.js"
     },
   },
   server: {
