@@ -14,7 +14,6 @@ import router from "./Router"
 import "./Assets/style.less"
 
 const app = createApp(App)
-
 import { createDiscreteApi, darkTheme } from "naive-ui"
 
 const { message, dialog } = createDiscreteApi(["message", "dialog"], {
@@ -31,3 +30,5 @@ app.use(router)
 app.use(naive)
 
 app.mount("#app")
+
+export default app

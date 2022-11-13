@@ -39,7 +39,6 @@ export default {
   font-size: 17px;
   color: #fff;
   box-shadow: 0 0 40px #00000052;
-  position: relative;
   div {
     height: 100%;
     align-items: center;

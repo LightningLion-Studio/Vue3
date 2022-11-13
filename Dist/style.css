@@ -1,0 +1,24 @@
+@keyframes trans {
+	0% {
+		opacity: 0.4;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.4;
+	}
+}
+:root {
+	background: #242424;
+}
+#app {
+	padding: 30%;
+}
+#loading-logo {
+	width: 100%;
+	filter: grayscale(1);
+	opacity: 0.7;
+	animation: trans infinite 1.5s;
+	transition: ease 0.2s;
+}

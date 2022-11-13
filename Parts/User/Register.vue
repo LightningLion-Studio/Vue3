@@ -67,7 +67,7 @@
   </n-button>
 </template>
 
-<script>
+<script lang="ts">
 import { CheckName, SendMail, Register } from "@/Api"
 import empty from "@/Utils/Empty"
 import storage from "@/Utils/Storage"

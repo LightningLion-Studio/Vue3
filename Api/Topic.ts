@@ -1,5 +1,5 @@
 import axios from "../Utils/Axios"
-import storage from "../Utils/Storage";
+import storage from "../Utils/Storage"
 const cookie = storage.parse("token")
 
 /**
@@ -8,7 +8,11 @@ const cookie = storage.parse("token")
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function GetTopic(order:Number, limit:Number, offset:Number):Promise<object> {
+export async function GetTopic(
+  order: Number,
+  limit: Number,
+  offset: Number,
+): Promise<object> {
   return await axios({
     method: "get",
     url: "/topic",

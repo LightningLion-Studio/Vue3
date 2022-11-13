@@ -1,4 +1,4 @@
-export function copyToClip(func:Function) {
+export function copyToClip(func: Function) {
   navigator.clipboard
     .writeText("LightningLion")
     .then(func())
@@ -7,6 +7,6 @@ export function copyToClip(func:Function) {
     })
 }
 
-export function openBili(address:string) {
+export function openBili(address: string) {
   location.href = address
 }

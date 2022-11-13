@@ -1,10 +1,12 @@
 <template>
   <n-config-provider :theme="darkTheme">
-    <router-view v-slot="{ Component }">
-      <transition appear mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+    <n-message-provider>
+      <router-view v-slot="{ Component }">
+        <transition appear mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </n-message-provider>
   </n-config-provider>
 </template>
 
@@ -19,7 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 .v-enter-from,
 .v-leave-to {
   opacity: 0;

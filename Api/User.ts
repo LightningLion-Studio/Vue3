@@ -8,7 +8,10 @@ const cookie = storage.parse("token")
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function Login(username:String, password:String):Promise<object> {
+export async function Login(
+  username: String,
+  password: String,
+): Promise<object> {
   return await axios({
     method: "get",
     params: {
@@ -25,7 +28,7 @@ export async function Login(username:String, password:String):Promise<object> {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function UserInfo():Promise<object> {
+export async function UserInfo(): Promise<object> {
   return await axios.get("/user", {
     params: {
       cookie: cookie.token,
@@ -41,7 +44,7 @@ export async function UserInfo():Promise<object> {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function CheckName(username:String):Promise<object> {
+export async function CheckName(username: String): Promise<object> {
   return await axios({
     method: "get",
     url: "/newuser/checkname",
@@ -58,7 +61,7 @@ export async function CheckName(username:String):Promise<object> {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function SendMail(email:String):Promise<object> {
+export async function SendMail(email: String): Promise<object> {
   return await axios({
     method: "get",
     url: "/newuser/sendmail",
@@ -76,12 +79,12 @@ export async function SendMail(email:String):Promise<object> {
  * @since 2022
  */
 interface RegisterParams {
-	username: String,
-	password: String,
-	email: String,
-	code: String
+  username: String
+  password: String
+  email: String
+  code: String
 }
-export async function Register(data:RegisterParams):Promise<object> {
+export async function Register(data: RegisterParams): Promise<object> {
   return await axios({
     method: "get",
     url: "/newuser/register",

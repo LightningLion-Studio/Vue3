@@ -63,90 +63,89 @@
 <script lang="ts">
 import { GetApp } from "@/Api"
 import { openBili, copyToClip } from "@/Utils/Active"
-const isIos:boolean = /ipad|iPhone/i.test(window.navigator.userAgent)
+const isIos: boolean = /ipad|iPhone/i.test(window.navigator.userAgent)
 
 export default {
-	data() {
-		return {
-			data: {
-				title: "加载中",
-			},
-			showModal: false,
-			method1: [],
-			type: "加载中",
-		}
-	},
-	methods: {
-		// 跳转到腕B
-		re() {
-			copyToClip(() => {
-				try {
-					openBili("watchrss://")
-				} catch (err) {
-					this.$message.error("打开失败")
-				}
-			})
-		},
-		// 激活
-		async activitive() {
-			const redict:Function = () => {
-				this.showModal = true
-				openBili("watchrss://")
-			}
-			copyToClip(() => {
-				if (!isIos) {
-					this.$dialog.warning({
-						title: "警告",
-						content: "检测到似乎是非iPhone，可能会无法激活",
-						positiveText: "确定",
-						negativeText: "取消",
-						onPositiveClick: redict,
-					})
-				} else {
-					redict()
-				}
-			})
-		},
-	},
-	async mounted() {
-		if (this.$route.params.e == "bilibili") {
-			this.type = "bilibili"
-			document.title = "腕上B站"
-			const data = await GetApp("bilibili")
-			this.data = data.data.data
-			this.method1 = data.data.data.methods
-		}
-	},
+  data() {
+    return {
+      data: {
+        title: "加载中",
+      },
+      showModal: false,
+      method1: [],
+      type: "加载中",
+    }
+  },
+  methods: {
+    // 跳转到腕B
+    re() {
+      copyToClip(() => {
+        try {
+          openBili("watchrss://")
+        } catch (err) {
+          this.$message.error("打开失败")
+        }
+      })
+    },
+    // 激活
+    async activitive() {
+      const redict: Function = () => {
+        this.showModal = true
+        openBili("watchrss://")
+      }
+      copyToClip(() => {
+        if (!isIos) {
+          this.$dialog.warning({
+            title: "警告",
+            content: "检测到似乎是非iPhone，可能会无法激活",
+            positiveText: "确定",
+            negativeText: "取消",
+            onPositiveClick: redict,
+          })
+        } else {
+          redict()
+        }
+      })
+    },
+  },
+  async mounted() {
+    if (this.$route.params.e == "bilibili") {
+      this.type = "bilibili"
+      document.title = "腕上B站"
+      const data = await GetApp("bilibili")
+      this.data = data.data.data
+      this.method1 = data.data.data.methods
+    }
+  },
 }
 </script>
 
 <style lang="less" scoped>
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 #apps {
-	color: #fff;
+  color: #fff;
 }
 .tip {
-	text-align: center;
+  text-align: center;
 }
 .bilibili {
-	.title {
-		text-align: center;
-	}
-	.logo-container {
-		text-align: center;
-	}
-	.logo {
-		width: 40%;
-		height: 100%;
-		margin-top: 60px;
-		text-align: center;
-		border-radius: 18%;
-	}
-	.step-icon {
-		font-style: normal;
-	}
+  .title {
+    text-align: center;
+  }
+  .logo-container {
+    text-align: center;
+  }
+  .logo {
+    width: 40%;
+    height: 100%;
+    margin-top: 60px;
+    text-align: center;
+    border-radius: 18%;
+  }
+  .step-icon {
+    font-style: normal;
+  }
 }
 </style>
-

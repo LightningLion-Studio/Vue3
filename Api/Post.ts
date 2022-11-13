@@ -1,6 +1,6 @@
 import axios from "../Utils/Axios"
 // @ts-ignore
-const cookie:Object = JSON.parse(localStorage.getItem("token"))
+const cookie: Object = JSON.parse(localStorage.getItem("token"))
 
 /**
  * 获取文章接口
@@ -12,10 +12,28 @@ const cookie:Object = JSON.parse(localStorage.getItem("token"))
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function GetPost(order:Number, limit:Number, offset:Number):Promise<object> {
+export async function GetPost(
+  order: Number,
+  limit: Number,
+  offset: Number,
+): Promise<object> {
   return await axios({
     method: "get",
     url: "/post",
     params: { order, limit, offset },
+  })
+}
+
+/**
+ * 获取单篇文章
+ *
+ * @param id 文章id
+ * @constructor
+ */
+export async function GetSinglePost(id: any): Promise<object> {
+  return await axios({
+    method: "get",
+    url: "/post/single",
+    params: { id },
   })
 }

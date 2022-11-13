@@ -22,7 +22,7 @@ export default {
     }
   },
   async mounted() {
-    const list:object = await GetPost()
+    const list: object = await GetPost()
     this.list = list.data.data
     this.load = false
     this.show = true
