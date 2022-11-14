@@ -67,9 +67,9 @@ export default {
   font-size: 17px;
   color: #fff;
   box-shadow: 0 0 40px #00000052;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   div {
     height: 100%;
     align-items: center;

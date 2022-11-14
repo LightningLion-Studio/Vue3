@@ -116,6 +116,11 @@
   "resolved" "https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.186.tgz"
   "version" "4.14.186"
 
+"@types/marked@^4.0.7":
+  "integrity" "sha512-eEAhnz21CwvKVW+YvRvcTuFKNU9CV1qH+opcgVK3pIMI6YZzDm6gc8o2vHjldFk6MGKt5pueSB7IOpvpx5Qekw=="
+  "resolved" "https://registry.npmjs.org/@types/marked/-/marked-4.0.7.tgz"
+  "version" "4.0.7"
+
 "@types/node@*", "@types/node@~17.0.5":
   "integrity" "sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw=="
   "resolved" "https://registry.npmmirror.com/@types/node/-/node-17.0.45.tgz"
@@ -551,9 +556,9 @@
   dependencies:
     "prr" "~1.0.1"
 
-"esbuild-darwin-64@0.15.12":
-  "integrity" "sha512-qkmqrTVYPFiePt5qFjP8w/S+GIUMbt6k8qmiPraECUWfPptaPJUGkCKrWEfYFRWB7bY23FV95rhvPyh/KARP8Q=="
-  "resolved" "https://registry.npmmirror.com/esbuild-darwin-64/-/esbuild-darwin-64-0.15.12.tgz"
+"esbuild-linux-64@0.15.12":
+  "integrity" "sha512-QcgCKb7zfJxqT9o5z9ZUeGH1k8N6iX1Y7VNsEi5F9+HzN1OIx7ESxtQXDN9jbeUSPiRH1n9cw6gFT3H4qbdvcA=="
+  "resolved" "https://registry.npmmirror.com/esbuild-linux-64/-/esbuild-linux-64-0.15.12.tgz"
   "version" "0.15.12"
 
 "esbuild@^0.15.9":
@@ -817,11 +822,6 @@
   "integrity" "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
   "resolved" "https://registry.npmmirror.com/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
-
-"fsevents@~2.3.2":
-  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
-  "resolved" "https://registry.npmmirror.com/fsevents/-/fsevents-2.3.2.tgz"
-  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
