@@ -52,6 +52,14 @@ const router = createRouter({
       },
     },
     {
+      name: "newdraft",
+      path: "/post/newdraft",
+      component: () => import("@/Pages/Post/NewDraft.vue"),
+      meta: {
+        title: "新建草稿",
+      },
+    },
+    {
       name: "single",
       path: "/post/:id",
       component: () => import("@/Pages/Post/SinglePost.vue"),

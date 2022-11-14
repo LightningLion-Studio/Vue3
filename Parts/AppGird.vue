@@ -39,10 +39,10 @@
   </n-grid>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   methods: {
-    to(e) {
+    to(e: any) {
       this.$router.push(e)
     },
   },
