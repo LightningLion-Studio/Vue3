@@ -1,7 +1,30 @@
 {
   "name": "lightlion_v2",
   "version": "2.0.4",
-  "license": "ISC",
+  "license": "Apache",
+  "homepage": ".",
+  "private": true,
+  "author": {
+    "name": "Zero",
+    "email": "1203970284@qq.com",
+    "url": "http://github.com/groupguanfang"
+  },
+  "maintainers": [],
+  "description": "心电社区前端项目",
+  "keywords": ["LightningLion","vue","vuejs"],
+  "main": "main.ts",
+  "bugs": {
+    "url": "https://github.com/LightningLion-Studio/Vue3",
+    "email": "1203970284@qq.com"
+  },
+  "config": {
+     "port" : "5173"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LightningLion-Studio/Vue3",
+    "directory": "心电社区前端项目"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

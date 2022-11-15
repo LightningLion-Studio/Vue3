@@ -1,4 +1,4 @@
-urls<template>
+<template>
   <md-editor v-model="text" @onUploadImg="onUploadImg" theme="dark" />
 </template>
 
@@ -14,7 +14,7 @@ const message = useMessage()
 
 const text = ref("# Hello Editor")
 
-const onUploadImg = (files, callback) => {
+const onUploadImg = (files: Array<any>, callback: Function) => {
   let form = new FormData()
   form.append("avatar", files[0])
 
@@ -28,12 +28,12 @@ const onUploadImg = (files, callback) => {
         },
       },
     )
-    .then(async res => {
+    .then(res => {
       message.success(res.data.message)
-      let arr
-      arr[0] = res.data.data
+      callback(["//" + res.data.data])
     })
     .catch(error => {
+      console.error(error)
       message.error("上传失败")
     })
 }
