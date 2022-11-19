@@ -1,7 +1,7 @@
 import axios from "../Utils/Axios"
 
 /**
- *
+ * 获取app详细信息
  * @param name
  * @constructor
  */
