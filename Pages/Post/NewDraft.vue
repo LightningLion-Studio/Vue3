@@ -18,20 +18,14 @@ const onUploadImg = (files: Array<any>, callback: Function) => {
   let form = new FormData()
   form.append("avatar", files[0])
 
-  axios
-    .post(
-      "https://v2.api.light.xhhzs.cn/v2/user/upload?cookie=" + cookie.token,
-      form,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      },
-    )
-    .then(res => {
-      message.success(res.data.message)
-      callback(["//" + res.data.data])
-    })
+  axios.post("https://v2.api.light.xhhzs.cn/v2/user/upload?cookie=" + cookie.token, form, {
+  headers: {
+    "Content-Type": "multipart/form-data",
+  },
+}).then(res => {
+   message.success(res.data.message)
+  callback(["//" + res.data.data])
+})
     .catch(error => {
       console.error(error)
       message.error("上传失败")

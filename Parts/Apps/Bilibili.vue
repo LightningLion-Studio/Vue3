@@ -8,7 +8,9 @@
     </n-h1>
     <n-space justify="center">
       <a :href="data.link" target="_blank">
-        <n-button type="primary" round size="large"> 立即下载 </n-button>
+        <n-button type="primary" round size="large">
+          立即下载
+        </n-button>
       </a>
       <n-button @click="activitive()" secondary round size="large">
         激活App
