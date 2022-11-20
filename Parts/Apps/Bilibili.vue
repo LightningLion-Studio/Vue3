@@ -33,56 +33,63 @@
       </n-card>
     </n-modal>
 
-    <n-space class="introduction" justify="center">
-      <n-grid :y-gap="25" :cols="1">
-        <n-grid-item>
-          <n-card
-            style="border-radius: 18px"
-            :bordered="false"
-            content-style="border-radius: 18px;background: #18181c"
-          >
-            <n-space vertical>
-              <n-icon size="60">
-                <PlayCircle20Filled />
-              </n-icon>
-              <n-text>Apple Wtach上的最佳播放器</n-text>
-            </n-space>
-          </n-card>
-        </n-grid-item>
-        <n-grid-item>
-          <n-card
-            style="border-radius: 18px"
-            :bordered="false"
-            content-style="border-radius: 18px;background: #18181c"
-          >
-            <n-icon size="60">
-              <PlayCircle20Filled />
-            </n-icon>
-          </n-card>
-        </n-grid-item>
-        <n-grid-item>
-          <n-card
-            style="border-radius: 18px"
-            :bordered="false"
-            content-style="border-radius: 18px;background: #18181c"
-          >
-            <n-icon size="60">
-              <PlayCircle20Filled />
-            </n-icon>
-          </n-card>
-        </n-grid-item>
-        <n-grid-item>
-          <n-card
-            style="border-radius: 18px"
-            :bordered="false"
-            content-style="border-radius: 18px;background: #18181c"
-          >
-            <n-icon size="60">
-              <PlayCircle20Filled />
-            </n-icon>
-          </n-card>
-        </n-grid-item>
-      </n-grid>
+    <n-space class="introduction" vertical :size="25">
+      <n-card
+        style="border-radius: 18px"
+        :bordered="false"
+        content-style="border-radius: 18px;background: #18181c;background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"
+      >
+        <n-space vertical>
+          <n-icon size="60">
+            <PlayCircle20Filled />
+          </n-icon>
+          <n-h1 style="margin-bottom: 70px">
+            可能是目前<br />Apple Wtach上的最佳的视频播放器
+          </n-h1>
+          <n-text>搜索，点赞，评论，一应俱全。</n-text>
+        </n-space>
+      </n-card>
+      <n-card
+        style="border-radius: 18px"
+        :bordered="false"
+        content-style="border-radius: 18px;background: #18181c"
+      >
+        <n-space vertical>
+          <n-icon size="60">
+            <Video20Regular />
+          </n-icon>
+          <n-h1 style="margin-bottom: 70px">直接在线搜索视频</n-h1>
+          <n-text>B站，抖音，你想刷的都有。</n-text>
+        </n-space>
+      </n-card>
+      <n-card
+        style="border-radius: 18px"
+        :bordered="false"
+        content-style="border-radius: 18px;background: #18181c"
+      >
+        <n-space vertical>
+          <n-icon size="60">
+            <CloudDownload />
+          </n-icon>
+          <n-h1 style="margin-bottom: 70px">无边界的观看体验</n-h1>
+          <n-text>
+            点击直接播放，还可以下载视频到本地，<br />随时随地，离线观看。
+          </n-text>
+        </n-space>
+      </n-card>
+      <n-card
+        style="border-radius: 18px"
+        :bordered="false"
+        content-style="border-radius: 18px;background: #18181c"
+      >
+        <n-space vertical>
+          <n-icon size="60">
+            <SoundWaveCircle24Regular />
+          </n-icon>
+          <n-h1 style="margin-bottom: 70px">支持外放声音和佩戴耳机</n-h1>
+          <n-text>直接外放，嗨起来。</n-text>
+        </n-space>
+      </n-card>
     </n-space>
 
     <n-h2>激活方法</n-h2>
@@ -114,6 +121,9 @@
 
 <script setup lang="ts">
 import PlayCircle20Filled from "@vicons/fluent/PlayCircle20Filled"
+import CloudDownload from "@vicons/carbon/CloudDownload"
+import Video20Regular from "@vicons/fluent/Video20Regular"
+import SoundWaveCircle24Regular from "@vicons/fluent/SoundWaveCircle24Regular"
 </script>
 
 <script lang="ts">
