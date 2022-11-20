@@ -1,23 +1,21 @@
 <template>
   <div class="single-post">
-    <Header :lefter="false" :autohide="true">{{ data.title }}</Header>
+    <Header :lefter="false" :autohide="true" blur="05">{{ data.title }}</Header>
+		<SinglePostBottomBar />
     <div class="container padding">
       <n-h2 prefix="bar" align-text>{{ data.title }}</n-h2>
-      <!--<div id="page-content" v-html="data.data"></div>-->
-      <MdEditor v-model="editor" theme="dark" previewOnly />
+      <div id="page-content" v-html="data.data"></div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { render, h, onMounted, ref } from "vue"
+import { onMounted, ref } from "vue"
 import { useRoute } from "vue-router"
 import { useMessage } from "naive-ui"
-import { GetSinglePost } from "../../Api"
-import MdEditor from "md-editor-v3"
-import "md-editor-v3/lib/style.css"
-
+import { GetSinglePost } from "@/Api"
 import Header from "../../Parts/Header.vue"
+import SinglePostBottomBar from "@/Parts/Post/SinglePostBottomBar.vue";
 const route = useRoute()
 const message = useMessage()
 
@@ -25,8 +23,6 @@ const data = ref({
   title: "666",
   data: "",
 })
-
-const editor = ref(``)
 
 /**
  * 发送请求
@@ -39,8 +35,6 @@ async function requester() {
     return
   }
   data.value = request.data.data
-  editor.value = request.data.data.data
-  console.log(editor.value)
 }
 
 onMounted(async () => {
@@ -49,9 +43,6 @@ onMounted(async () => {
 </script>
 
 <style lang="less">
-.md-editor {
-  --md-bk-color: #fff0;
-}
 .container {
   #page-content {
     color: #fff;

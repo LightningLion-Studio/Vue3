@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { KeyboardArrowRightSharp } from "@vicons/material"
+import KeyboardArrowRightSharp from "@vicons/material/KeyboardArrowRightSharp"
 import { Login } from "@/Api"
 import storage from "@/Utils/Storage"
 
