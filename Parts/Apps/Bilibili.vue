@@ -8,9 +8,7 @@
     </n-h1>
     <n-space justify="center">
       <a :href="data.link" target="_blank">
-        <n-button type="primary" round size="large">
-          立即下载
-        </n-button>
+        <n-button type="primary" round size="large"> 立即下载 </n-button>
       </a>
       <n-button @click="activitive()" secondary round size="large">
         激活App
@@ -34,6 +32,58 @@
         </n-space>
       </n-card>
     </n-modal>
+
+    <n-space class="introduction" justify="center">
+      <n-grid :y-gap="25" :cols="1">
+        <n-grid-item>
+          <n-card
+            style="border-radius: 18px"
+            :bordered="false"
+            content-style="border-radius: 18px;background: #18181c"
+          >
+            <n-space vertical>
+              <n-icon size="60">
+                <PlayCircle20Filled />
+              </n-icon>
+              <n-text>Apple Wtach上的最佳播放器</n-text>
+            </n-space>
+          </n-card>
+        </n-grid-item>
+        <n-grid-item>
+          <n-card
+            style="border-radius: 18px"
+            :bordered="false"
+            content-style="border-radius: 18px;background: #18181c"
+          >
+            <n-icon size="60">
+              <PlayCircle20Filled />
+            </n-icon>
+          </n-card>
+        </n-grid-item>
+        <n-grid-item>
+          <n-card
+            style="border-radius: 18px"
+            :bordered="false"
+            content-style="border-radius: 18px;background: #18181c"
+          >
+            <n-icon size="60">
+              <PlayCircle20Filled />
+            </n-icon>
+          </n-card>
+        </n-grid-item>
+        <n-grid-item>
+          <n-card
+            style="border-radius: 18px"
+            :bordered="false"
+            content-style="border-radius: 18px;background: #18181c"
+          >
+            <n-icon size="60">
+              <PlayCircle20Filled />
+            </n-icon>
+          </n-card>
+        </n-grid-item>
+      </n-grid>
+    </n-space>
 
     <n-h2>激活方法</n-h2>
     <n-collapse :default-expanded-names="[1]" accordion>
@@ -61,6 +111,10 @@
     </n-collapse>
   </div>
 </template>
+
+<script setup lang="ts">
+import PlayCircle20Filled from "@vicons/fluent/PlayCircle20Filled"
+</script>
 
 <script lang="ts">
 import { GetApp } from "@/Api"
@@ -149,5 +203,8 @@ a {
   .step-icon {
     font-style: normal;
   }
+}
+.introduction {
+  margin-top: 25px;
 }
 </style>
