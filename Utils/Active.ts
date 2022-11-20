@@ -1,10 +1,11 @@
+import * as copy from 'copy-to-clipboard';
+
 export function copyToClip(func: Function) {
-  navigator.clipboard
-    .writeText("LightningLion")
-    .then(func())
-    .catch(err => {
-      alert("错误，请自行复制口令，否则无法下载腕上B站！" + err)
-    })
+  copy("LightningLion",{
+    onCopy() {
+      func()
+    }
+  })
 }
 
 export function openBili(address: string) {
