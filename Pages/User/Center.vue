@@ -24,7 +24,7 @@ import { UserInfo } from "@/Api"
 import BottomBar from "@/Parts/BottomBar.vue"
 import DrawerContent from "@/Parts/User/Center/UserDrawer.vue"
 import Header from "@/Parts/User/Center/Header.vue"
-import { MoreHorizontal16Regular } from "@vicons/fluent"
+import MoreHorizontal16Regular from "@vicons/fluent/MoreHorizontal16Regular"
 
 export default {
   data() {

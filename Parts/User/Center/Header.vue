@@ -45,7 +45,7 @@
 
 <script>
 import { UserInfo } from "@/Api"
-import { User } from "@vicons/carbon"
+import User from "@vicons/carbon/User"
 
 export default {
   data() {

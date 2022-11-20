@@ -22,8 +22,9 @@
 </template>
 
 <script>
-import { Settings16Regular, Power20Filled } from "@vicons/fluent"
-import { MediaLibrary } from "@vicons/carbon"
+import Settings16Regular from "@vicons/fluent/Settings16Regular"
+import Power20Filled from "@vicons/fluent/Power20Filled"
+import MediaLibrary from "@vicons/carbon/MediaLibrary"
 
 export default {
   methods: {
