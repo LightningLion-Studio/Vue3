@@ -1,10 +1,10 @@
 <template>
   <div class="single-post">
     <Header :lefter="false" :autohide="true" blur="05">{{ data.title }}</Header>
-		<SinglePostBottomBar />
+    <SinglePostBottomBar />
     <div class="container padding">
       <n-h2 prefix="bar" align-text>{{ data.title }}</n-h2>
-      <div id="page-content" v-html="data.data"></div>
+      <MdEditor previewOnly theme="dark" v-model="data.data" />
     </div>
   </div>
 </template>
@@ -15,7 +15,9 @@ import { useRoute } from "vue-router"
 import { useMessage } from "naive-ui"
 import { GetSinglePost } from "@/Api"
 import Header from "../../Parts/Header.vue"
-import SinglePostBottomBar from "@/Parts/Post/SinglePostBottomBar.vue";
+import MdEditor from "md-editor-v3"
+import "md-editor-v3/lib/style.css"
+import SinglePostBottomBar from "@/Parts/Post/SinglePostBottomBar.vue"
 const route = useRoute()
 const message = useMessage()
 
@@ -43,32 +45,15 @@ onMounted(async () => {
 </script>
 
 <style lang="less">
-.container {
-  #page-content {
-    color: #fff;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
-      &:before {
-        content: " ";
-        background: #fff;
-        width: 10px;
-        position: absolute;
-      }
-    }
-    p {
-      font-size: 18px;
-    }
-    img {
-      width: 100%;
-    }
+.single-post {
+	p {
+		color: #a4a4a9;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		color: var(--color)!important;
+	}
+  span.figcaption {
+    text-align: left;
   }
 }
 </style>

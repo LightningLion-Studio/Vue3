@@ -1,21 +1,21 @@
 <template>
   <n-grid class="drawer-content" :x-gap="12" :y-gap="8" :cols="4">
     <n-grid-item class="item" @click="logout()">
-      <n-icons size="small">
+      <n-icon size="40">
         <Power20Filled />
-      </n-icons>
+      </n-icon>
       <n-text strong> 登出 </n-text>
     </n-grid-item>
     <n-grid-item class="item">
-      <n-icons size="small">
+      <n-icon size="40">
         <Settings16Regular />
-      </n-icons>
+      </n-icon>
       <n-text strong> 设置 </n-text>
     </n-grid-item>
     <n-grid-item class="item">
-      <n-icons size="small">
+      <n-icon size="40">
         <MediaLibrary />
-      </n-icons>
+      </n-icon>
       <n-text strong> 媒体 </n-text>
     </n-grid-item>
   </n-grid>
@@ -43,6 +43,9 @@ export default {
   .item {
     text-align: center;
     margin: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>

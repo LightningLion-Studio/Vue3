@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider :theme="darkTheme">
+  <n-config-provider :theme="darkTheme" :theme-overrides="themeOverrides">
     <n-message-provider>
       <router-view v-slot="{ Component }">
         <transition appear mode="out-in">
@@ -12,10 +12,12 @@
 
 <script>
 import { darkTheme } from "naive-ui"
+import config from "./themeconfig.json"
 export default {
   data() {
     return {
       darkTheme,
+			themeOverrides: config
     }
   },
 }

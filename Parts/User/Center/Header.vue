@@ -1,5 +1,6 @@
 <template>
   <div class="padding header">
+		<!--用户-->
     <n-thing
       :content-indented="true"
       :title="info.name"
@@ -26,18 +27,19 @@
       </template>
     </n-thing>
 
+		<!--统计数据-->
     <n-grid>
       <n-gi class="static" :span="6">
-        <n-statistic label="文章" :value="99" />
+        <n-statistic label="文章" :value="0" />
       </n-gi>
       <n-gi class="static" :span="6">
-        <n-statistic label="草稿" :value="99" />
+        <n-statistic label="草稿" :value="0" />
       </n-gi>
       <n-gi class="static" :span="6">
-        <n-statistic label="粉丝" :value="99" />
+        <n-statistic label="粉丝" :value="0" />
       </n-gi>
       <n-gi class="static" :span="6">
-        <n-statistic label="关注" :value="99" />
+        <n-statistic label="关注" :value="0" />
       </n-gi>
     </n-grid>
   </div>
