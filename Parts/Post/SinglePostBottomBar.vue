@@ -52,6 +52,7 @@ const like = () => {
 	background: #24242401;
 	backdrop-filter: blur(70px) brightness(0.4);
 	-webkit-backdrop-filter: blur(70px) brightness(0.4);
+	z-index: 999;
   .left,
   .right {
     align-items: center;

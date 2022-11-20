@@ -2,9 +2,15 @@
   <div id="user">
     <!--浮层组件-->
     <BottomBar :on="2" />
-    <n-drawer height="auto" :show="drawer" placement="bottom">
+    <n-drawer height="auto" v-model:show="drawer" placement="bottom">
       <DrawerContent />
-      <n-button @click="drawer = false" size="large" :bordered="false" block>
+      <n-button
+        style="top: -1px"
+        @click="drawer = false"
+        size="large"
+        :bordered="false"
+        block
+      >
         取消
       </n-button>
     </n-drawer>
@@ -15,7 +21,10 @@
         <MoreHorizontal16Regular />
       </n-icon>
     </div>
+
+    <!--主要内容-->
     <Header />
+		<Body />
   </div>
 </template>
 
@@ -25,6 +34,7 @@ import BottomBar from "@/Parts/BottomBar.vue"
 import DrawerContent from "@/Parts/User/Center/UserDrawer.vue"
 import Header from "@/Parts/User/Center/Header.vue"
 import MoreHorizontal16Regular from "@vicons/fluent/MoreHorizontal16Regular"
+import Body from "@/Parts/User/Center/Body.vue";
 
 export default {
   data() {
@@ -32,7 +42,7 @@ export default {
       drawer: false,
     }
   },
-  components: { BottomBar, DrawerContent, Header, MoreHorizontal16Regular },
+  components: {Body, BottomBar, DrawerContent, Header, MoreHorizontal16Regular },
 }
 </script>
 
