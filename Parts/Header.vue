@@ -35,6 +35,8 @@ export default {
           this.$refs.header.classList.remove("hide")
         }
       })
+    } else {
+      this.$refs.header.classList.remove("hide")
     }
     if (this.lefter == false) {
       this.left = false
