@@ -1,21 +1,30 @@
 <template>
-  <div class="header hide" id="header" ref="header">
+  <div
+    class="header hide"
+    id="header"
+    ref="header"
+    :style="{
+      background: '#242424' + blur,
+    }"
+  >
     <div class="left" @click="back()" v-if="left">
       <n-icon size="35">
         <KeyboardArrowLeftRound />
       </n-icon>
     </div>
-    <div class="text">
-      <slot />
+    <div class="text-container">
+      <div class="text">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { KeyboardArrowLeftRound } from "@vicons/material"
+import KeyboardArrowLeftRound from "@vicons/material/KeyboardArrowLeftRound"
 
 export default {
-  props: ["autohide", "lefter"],
+  props: ["autohide", "lefter", "blur"],
   data() {
     return {
       left: true,
@@ -35,6 +44,8 @@ export default {
           this.$refs.header.classList.remove("hide")
         }
       })
+    } else {
+      this.$refs.header.classList.remove("hide")
     }
     if (this.lefter == false) {
       this.left = false
@@ -53,6 +64,7 @@ export default {
 }
 .header {
   transform: translateY(0);
+  background: #242424;
   transition: ease 0.2s;
   position: fixed;
   width: 100%;
@@ -63,25 +75,28 @@ export default {
   height: 45px;
   backdrop-filter: blur(10px) brightness(0.5);
   -webkit-backdrop-filter: blur(10px) brightness(0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: var(--border);
   font-size: 17px;
   color: #fff;
   box-shadow: 0 0 40px #00000052;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  div {
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
+	.text-container {
+		position: absolute;
+		width: 100%;
+	}
   .text {
-    width: 100%;
-    position: absolute;
+    position: relative;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		margin-left: 40px;
+		margin-right: 40px;
   }
   .left {
     z-index: 999;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		display: flex;
   }
 }
 </style>

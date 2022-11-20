@@ -11,14 +11,18 @@
   },
   "maintainers": [],
   "description": "心电社区前端项目",
-  "keywords": ["LightningLion","vue","vuejs"],
+  "keywords": [
+    "LightningLion",
+    "vue",
+    "vuejs"
+  ],
   "main": "main.ts",
   "bugs": {
     "url": "https://github.com/LightningLion-Studio/Vue3",
     "email": "1203970284@qq.com"
   },
   "config": {
-     "port" : "5173"
+    "port": "5173"
   },
   "repository": {
     "type": "git",
@@ -54,11 +58,14 @@
     "@vitejs/plugin-vue": "^3.0.3",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/test-utils": "^2.0.2",
+    "@vue/tsconfig": "^0.1.3",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "jsdom": "^20.0.0",
     "prettier": "^2.7.1",
     "vite": "^3.0.9",
-    "vitest": "^0.23.0"
-  }
+    "vitest": "^0.23.0",
+		"vue-tsc": "^0.40.7",
+		"npm-run-all": "^4.1.5"
+	}
 }
