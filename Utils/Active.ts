@@ -1,11 +1,13 @@
-import * as copy from 'copy-to-clipboard';
+import copyer from 'clipboard-copy'
 
 export function copyToClip(func: Function) {
-  copy("LightningLion",{
+  copyer("LightningLion")
+  func()
+  /*copy("LightningLion",{
     onCopy() {
       func()
     }
-  })
+  })*/
 }
 
 export function openBili(address: string) {
