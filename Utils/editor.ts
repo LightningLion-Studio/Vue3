@@ -29,22 +29,19 @@ export const tools:Array = [
 
 export function fixEditor():void {
   // 修复移动端无法点击上传按钮的问题
-  document
-    .querySelector(".md-toolbar-item[title='图片']")
+  document.getElementsByClassName('md-editor-toolbar-item')[5]
     .addEventListener("click", () => {
       document
         .querySelector(".md-dropdown")
         .classList.remove("md-dropdown-hidden");
     });
-  document
-    .querySelector(".md-toolbar-item[title='标题']")
+  document.getElementsByClassName('md-editor-toolbar-item')[5]
     .addEventListener("click", () => {
       document
         .querySelector(".md-dropdown")[1]
         .classList.remove("md-dropdown-hidden");
     });
-  document
-    .querySelector(".md-toolbar-item[title='表格']")
+  document.getElementsByClassName('md-editor-toolbar-item')[6]
     .addEventListener("click", () => {
       document
         .querySelector(".md-dropdown")[2]
