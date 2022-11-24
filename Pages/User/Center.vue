@@ -24,7 +24,16 @@
 
     <!--主要内容-->
     <Header />
-		<Body />
+	<Body />
+	<n-affix :top="120" position="fixed" :trigger-bottom="9999" :bottom="70" style="right: 20px">
+		<n-button size="large" circle type="primary">
+		<template #icon>
+			<n-icon>
+		  		<Add />
+			</n-icon>
+		</template>
+		</n-button>
+   </n-affix>
   </div>
 </template>
 
@@ -34,6 +43,7 @@ import BottomBar from "@/Parts/BottomBar.vue"
 import DrawerContent from "@/Parts/User/Center/UserDrawer.vue"
 import Header from "@/Parts/User/Center/Header.vue"
 import MoreHorizontal16Regular from "@vicons/fluent/MoreHorizontal16Regular"
+import Add from "@vicons/carbon/Add"
 import Body from "@/Parts/User/Center/Body.vue";
 
 export default {
@@ -42,7 +52,7 @@ export default {
       drawer: false,
     }
   },
-  components: {Body, BottomBar, DrawerContent, Header, MoreHorizontal16Regular },
+  components: { Body, BottomBar, DrawerContent, Header, MoreHorizontal16Regular, Add },
 }
 </script>
 

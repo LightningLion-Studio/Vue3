@@ -48,6 +48,7 @@
 <script>
 import { UserInfo } from "@/Api"
 import User from "@vicons/carbon/User"
+import { useMessage } from "naive-ui"
 
 export default {
   data() {
@@ -55,9 +56,19 @@ export default {
       info: [],
     }
   },
+  setup() {
+    const message = useMessage()
+    return { message }
+  },
   async mounted() {
     const info = await UserInfo()
-    this.info = info.data.data
+    if (info.data.code !== 500) {
+      this.info = info.data.data
+    } else {
+      this.message.error(info.data.message)
+      localStorage.removeItem('token')
+      this.$router.push('/')
+    }
   },
   components: { User },
 }

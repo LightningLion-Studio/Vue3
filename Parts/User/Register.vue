@@ -29,7 +29,7 @@
         v-model:value="allValue.code"
       >
         <template #suffix>
-          <n-button @click="send()" quaternary>
+          <n-button @click="send()" quaternary :disabled="sendMailButton">
             {{ sendMailButtonText }}
           </n-button>
         </template>
@@ -82,6 +82,7 @@ export default {
       registerButton: true,
       registerButtonText: "请填写上面的所有选项",
       sendMailButtonText: "发送验证码",
+      sendMailButton: false,
       passwordStatus: "",
       allValue: {
         username: "",
@@ -164,8 +165,23 @@ export default {
     async send() {
       this.sendMailButtonText = "正在发送"
       const req = await SendMail(this.allValue.email)
-      this.$message.success(req.data.message)
-      this.sendMailButtonText = "重新发送"
+      if (req.data.code === 200) {
+        this.$message.success(req.data.message)
+      } else {
+        this.$message.error(req.data.message)
+      }
+      let count = 60
+      const timer = setInterval(() => {
+        this.sendMailButtonText = `${count}s` 
+        if (count == 0) {
+          this.sendMailButton = false
+          this.sendMailButtonText = "重新发送"
+          clearInterval(timer)
+        } else {
+          this.sendMailButton = true
+          count--
+        }
+      },1000)
     },
     /**
      * 注册
