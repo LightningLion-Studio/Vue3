@@ -72,7 +72,7 @@
 						<PlayCircle20Filled />
 					</n-icon>
 					<n-h1 style="margin-bottom: 70px">
-						可能是目前<br />Apple Wtach上的最佳的视频播放器
+						可能是目前<br />Apple Watch上的最佳的视频播放器
 					</n-h1>
 					<n-text>搜索，点赞，评论，一应俱全。</n-text>
 				</n-space>
