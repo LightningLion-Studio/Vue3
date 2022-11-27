@@ -1,5 +1,5 @@
 import axios from "../Utils/Axios"
-import { TypeCookie } from "../Types/main"
+import { TypeCookie, TypeRequest } from "../Types/main"
 
 const cookie: TypeCookie = JSON.parse(localStorage.getItem("token")!)
 
@@ -17,7 +17,7 @@ export async function GetPost(
   order: Number,
   limit: Number,
   offset: Number,
-): Promise<object> {
+): Promise<TypeRequest> {
   return await axios({
     method: "get",
     url: "/post",
@@ -31,7 +31,7 @@ export async function GetPost(
  * @param id 文章id
  * @constructor
  */
-export async function GetSinglePost(id: any): Promise<object> {
+export async function GetSinglePost(id: any): Promise<TypeRequest> {
   return await axios({
     method: "get",
     url: "/post/single",
@@ -54,10 +54,10 @@ export async function newDraft(
   poster: string,
   id: number,
   category: number,
-) {
+): Promise<TypeRequest> {
   return await axios({
     method: "post",
-    url: "/postcreate",
+    url: "/post",
     params: { cookie: cookie.token },
     data: { title, data, comment, poster, id, category },
   })

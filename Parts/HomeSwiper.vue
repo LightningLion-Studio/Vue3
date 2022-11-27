@@ -19,6 +19,6 @@
   object-fit: cover;
 }
 .container {
-  border-radius: var(--radius);
+	border-radius: var(--radius);
 }
 </style>

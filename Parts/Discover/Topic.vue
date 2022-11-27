@@ -7,7 +7,7 @@
     <n-result
       v-if="data.length === 0"
       status="403"
-      title="发现页还没有开放"
+      title="这里还没有任何帖子"
       description="生活总归带点荒谬"
     />
   </div>

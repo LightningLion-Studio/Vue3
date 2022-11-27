@@ -1,5 +1,4 @@
 /**
- *
  * Token存储定义
  *
  * @author Zero
@@ -11,4 +10,25 @@ interface TypeCookie {
   token: string
 }
 
-export { TypeCookie }
+/**
+ * 基础数据返回结构定义
+ *
+ * @returns Promise<any>
+ * @author Zero
+ * @since 2022
+ */
+interface TypeRequest {
+  data: {
+    id: number
+    message: string
+    data: object | Array<any>
+  }
+  config: {
+    params: object
+    data: object
+    url: string
+    baseURL: string
+  }
+}
+
+export { TypeCookie, TypeRequest }
