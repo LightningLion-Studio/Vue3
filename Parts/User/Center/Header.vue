@@ -1,6 +1,6 @@
 <template>
   <div class="padding header">
-		<!--用户-->
+    <!--用户-->
     <n-thing
       :content-indented="true"
       :title="info.name"
@@ -27,7 +27,7 @@
       </template>
     </n-thing>
 
-		<!--统计数据-->
+    <!--统计数据-->
     <n-grid>
       <n-gi class="static" :span="6">
         <n-statistic label="文章" :value="0" />
@@ -66,8 +66,8 @@ export default {
       this.info = info.data.data
     } else {
       this.message.error(info.data.message)
-      localStorage.removeItem('token')
-      this.$router.push('/')
+      localStorage.removeItem("token")
+      this.$router.push("/")
     }
   },
   components: { User },

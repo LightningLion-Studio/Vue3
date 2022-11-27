@@ -172,7 +172,7 @@ export default {
       }
       let count = 60
       const timer = setInterval(() => {
-        this.sendMailButtonText = `${count}s` 
+        this.sendMailButtonText = `${count}s`
         if (count == 0) {
           this.sendMailButton = false
           this.sendMailButtonText = "重新发送"
@@ -181,7 +181,7 @@ export default {
           this.sendMailButton = true
           count--
         }
-      },1000)
+      }, 1000)
     },
     /**
      * 注册

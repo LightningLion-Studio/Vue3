@@ -52,7 +52,7 @@ request.interceptors.response.use(
     console.log(response)
     if (response.data.message == "您未登录 请先登录") {
       message.error(response.data.message)
-      localStorage.removeItem('token')
+      localStorage.removeItem("token")
       router.push("/")
       return
     } else {

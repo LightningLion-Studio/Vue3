@@ -58,68 +58,68 @@
       </n-collapse-item>
     </n-collapse>
 
-		<n-h1 style="margin-bottom: 0">来见见<br>手表上的腕上B站</n-h1>
-		<n-text>Introduce the Best video software on WatchOS</n-text>
+    <n-h1 style="margin-bottom: 0">来见见<br />手表上的腕上B站</n-h1>
+    <n-text>Introduce the Best video software on WatchOS</n-text>
 
-		<n-space class="introduction" vertical :size="25">
-			<n-card
-				style="border-radius: 18px"
-				:bordered="false"
-				content-style="border-radius: 18px;background: #18181c;background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"
-			>
-				<n-space vertical>
-					<n-icon size="60">
-						<PlayCircle20Filled />
-					</n-icon>
-					<n-h1 style="margin-bottom: 70px">
-						可能是目前<br />Apple Watch上的最佳的视频播放器
-					</n-h1>
-					<n-text>搜索，点赞，评论，一应俱全。</n-text>
-				</n-space>
-			</n-card>
-			<n-card
-				style="border-radius: 18px"
-				:bordered="false"
-				content-style="border-radius: 18px;background: #18181c;background: rgb(173 120 248);"
-			>
-				<n-space vertical>
-					<n-icon size="60">
-						<Video20Regular />
-					</n-icon>
-					<n-h1 style="margin-bottom: 70px">直接在线搜索视频</n-h1>
-					<n-text>B站，抖音，你想刷的都有。</n-text>
-				</n-space>
-			</n-card>
-			<n-card
-				style="border-radius: 18px"
-				:bordered="false"
-				content-style="border-radius: 18px;background: #18181c;background-image: linear-gradient(225deg, rgb(173 120 248) 0%, #48c6ef 100%);"
-			>
-				<n-space vertical>
-					<n-icon size="60">
-						<CloudDownload />
-					</n-icon>
-					<n-h1 style="margin-bottom: 70px">无边界的观看体验</n-h1>
-					<n-text>
-						点击直接播放，还可以下载视频到本地，<br />
-						<strong style="font-size: 18px">随时随地，离线观看。</strong>
-					</n-text>
-				</n-space>
-			</n-card>
-			<n-card
-				style="border-radius: 18px"
-				:bordered="false"
-				content-style="border-radius: 18px;background: #18181c;background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);"
-			>
-				<n-space vertical>
-					<n-icon size="60">
-						<SoundWaveCircle24Regular />
-					</n-icon>
-					<n-h1 style="margin-bottom: 70px">支持外放声音和佩戴耳机</n-h1>
-					<n-text>直接外放，嗨起来。</n-text>
-				</n-space>
-			</n-card>
-		</n-space>
+    <n-space class="introduction" vertical :size="25">
+      <n-card
+        style="border-radius: 18px"
+        :bordered="false"
+        content-style="border-radius: 18px;background: #18181c;background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"
+      >
+        <n-space vertical>
+          <n-icon size="60">
+            <PlayCircle20Filled />
+          </n-icon>
+          <n-h1 style="margin-bottom: 70px">
+            可能是目前<br />Apple Watch上的最佳的视频播放器
+          </n-h1>
+          <n-text>搜索，点赞，评论，一应俱全。</n-text>
+        </n-space>
+      </n-card>
+      <n-card
+        style="border-radius: 18px"
+        :bordered="false"
+        content-style="border-radius: 18px;background: #18181c;background: rgb(173 120 248);"
+      >
+        <n-space vertical>
+          <n-icon size="60">
+            <Video20Regular />
+          </n-icon>
+          <n-h1 style="margin-bottom: 70px">直接在线搜索视频</n-h1>
+          <n-text>B站，抖音，你想刷的都有。</n-text>
+        </n-space>
+      </n-card>
+      <n-card
+        style="border-radius: 18px"
+        :bordered="false"
+        content-style="border-radius: 18px;background: #18181c;background-image: linear-gradient(225deg, rgb(173 120 248) 0%, #48c6ef 100%);"
+      >
+        <n-space vertical>
+          <n-icon size="60">
+            <CloudDownload />
+          </n-icon>
+          <n-h1 style="margin-bottom: 70px">无边界的观看体验</n-h1>
+          <n-text>
+            点击直接播放，还可以下载视频到本地，<br />
+            <strong style="font-size: 18px">随时随地，离线观看。</strong>
+          </n-text>
+        </n-space>
+      </n-card>
+      <n-card
+        style="border-radius: 18px"
+        :bordered="false"
+        content-style="border-radius: 18px;background: #18181c;background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);"
+      >
+        <n-space vertical>
+          <n-icon size="60">
+            <SoundWaveCircle24Regular />
+          </n-icon>
+          <n-h1 style="margin-bottom: 70px">支持外放声音和佩戴耳机</n-h1>
+          <n-text>直接外放，嗨起来。</n-text>
+        </n-space>
+      </n-card>
+    </n-space>
   </div>
 </template>
 

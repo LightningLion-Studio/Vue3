@@ -46,12 +46,17 @@ onMounted(async () => {
 
 <style lang="less">
 .single-post {
-	p {
-		color: #a4a4a9;
-	}
-	h1,h2,h3,h4,h5,h6 {
-		color: var(--color)!important;
-	}
+  p {
+    color: #a4a4a9;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color) !important;
+  }
   span.figcaption {
     text-align: left;
   }

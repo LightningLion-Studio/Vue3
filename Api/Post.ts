@@ -1,6 +1,7 @@
 import axios from "../Utils/Axios"
-// @ts-ignore
-const cookie: Object = JSON.parse(localStorage.getItem("token"))
+import { TypeCookie } from "../Types/main"
+
+const cookie: TypeCookie = JSON.parse(localStorage.getItem("token")!)
 
 /**
  * 获取文章接口
@@ -35,5 +36,29 @@ export async function GetSinglePost(id: any): Promise<object> {
     method: "get",
     url: "/post/single",
     params: { id },
+  })
+}
+
+/**
+ * 发布草稿
+ *
+ * @params title, data, comment, cookie, poster
+ * @returns
+ * @author Zero
+ * @since 2022
+ */
+export async function newDraft(
+  title: string,
+  data: string,
+  comment: string,
+  poster: string,
+  id: number,
+  category: number,
+) {
+  return await axios({
+    method: "post",
+    url: "/postcreate",
+    params: { cookie: cookie.token },
+    data: { title, data, comment, poster, id, category },
   })
 }
