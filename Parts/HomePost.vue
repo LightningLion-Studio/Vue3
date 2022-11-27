@@ -6,7 +6,7 @@
       :key="index"
       :title="item.title"
       :cover="item.poster"
-			type="poster"
+      type="poster"
     >
       {{ item.data }}
     </Carder>
@@ -28,10 +28,10 @@ export default {
   },
   async mounted() {
     const list: object = await GetPost()
-		// 去除空格
-		for (let i = 0;i < list.data.data.length;i++) {
-			list.data.data[i].data = list.data.data[i].data.replace(/\s*/g,"")
-		}
+    // 去除空格
+    for (let i = 0; i < list.data.data.length; i++) {
+      list.data.data[i].data = list.data.data[i].data.replace(/\s*/g, "")
+    }
     this.list = list.data.data
     this.load = false
     this.show = true

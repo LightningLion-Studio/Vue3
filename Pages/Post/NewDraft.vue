@@ -101,10 +101,10 @@ const save = async () => {
   if (update.data.code == 200) {
     message.success(update.data.message)
   } else if (update.data.code == 201) {
-		message.success(update.data.message)
+    message.success(update.data.message)
   } else {
-		message.error(update.data.message)
-	}
+    message.error(update.data.message)
+  }
   saveButtonDisabled.value = false
 }
 

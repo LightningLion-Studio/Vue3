@@ -1,8 +1,8 @@
 <template>
   <div class="lister">
-    <n-card v-for="(item, index) in data" :title="item.title">
+    <Carder v-for="(item, index) in data" :title="item.title">
       {{ item.data }}
-    </n-card>
+    </Carder>
 
     <n-result
       v-if="data.length === 0"
@@ -15,8 +15,10 @@
 
 <script>
 import { GetTopic } from "@/Api"
+import Carder from "../Post/Carder.vue"
 
 export default {
+  components: { Carder },
   data() {
     return {
       data: [],

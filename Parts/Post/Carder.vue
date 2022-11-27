@@ -21,11 +21,11 @@ const props = defineProps({
 })
 const classes = ref({})
 const func = () => {
-	if (props.type == "poster") {
-		classes.value.poster = true
-	} else {
-		classes.value.poster = false
-	}
+  if (props.type == "poster") {
+    classes.value.poster = true
+  } else {
+    classes.value.poster = false
+  }
 }
 onMounted(func)
 onUpdated(func)
@@ -33,7 +33,7 @@ onUpdated(func)
 
 <style lang="less">
 .carder {
-	border-radius: 18px;
+  border-radius: 18px;
   .description {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -41,15 +41,21 @@ onUpdated(func)
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
+  .title {
+    margin-top: 14px;
+  }
 }
 .carder.poster {
   .n-card__content {
     position: absolute;
     bottom: 0;
   }
-	.n-card-cover img {
-		filter: brightness(0.5);
-		border-radius: 18px;
+  .n-card-cover img {
+    filter: brightness(0.5);
+    border-radius: 18px;
+  }
+	.title {
+		margin-top: 0!important;
 	}
 }
 </style>
