@@ -21,7 +21,7 @@ interface TypeRequest {
   data: {
     id: number
     message: string
-    data: object | Array<any>
+    data: any
   }
   config: {
     params: object

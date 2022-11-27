@@ -104,7 +104,7 @@ export async function Register(data: RegisterParams): Promise<TypeRequest> {
  * @author Zero
  * @since 2022
  */
-export async function GetUserInfo(id: number): Promise<TypeRequest> {
+export async function GetUserSingleInfo(id: number): Promise<TypeRequest> {
   return await axios({
     method: "get",
     url: "/user/info",
