@@ -1,5 +1,5 @@
 <template>
-	<div id="comments"></div>
+  <div id="comments"></div>
 </template>
 
 <script setup lang="ts"></script>

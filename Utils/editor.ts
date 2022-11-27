@@ -1,4 +1,4 @@
-export const tools:Array = [
+export const tools: Array<any> = [
   "revoke",
   "next",
   "-",
@@ -25,26 +25,24 @@ export const tools:Array = [
   "preview",
   "htmlPreview",
   "catalog",
-];
+]
 
-export function fixEditor():void {
-  // 修复移动端无法点击上传按钮的问题
-  document.getElementsByClassName('md-editor-toolbar-item')[5]
+export function fixEditor() {
+  // 移动端无法点击图片按钮的问题
+  document
+    .getElementsByClassName("md-editor-toolbar-item")[5]
     .addEventListener("click", () => {
       document
-        .querySelector(".md-dropdown")
-        .classList.remove("md-dropdown-hidden");
-    });
-  document.getElementsByClassName('md-editor-toolbar-item')[5]
+        .querySelector(".md-dropdown")!
+        .classList.remove("md-dropdown-hidden")
+    })
+
+  // 移动端无法点击表格按钮
+  document
+    .getElementsByClassName("md-editor-toolbar-item")[16]
     .addEventListener("click", () => {
       document
-        .querySelector(".md-dropdown")[1]
-        .classList.remove("md-dropdown-hidden");
-    });
-  document.getElementsByClassName('md-editor-toolbar-item')[6]
-    .addEventListener("click", () => {
-      document
-        .querySelector(".md-dropdown")[2]
-        .classList.remove("md-dropdown-hidden");
-    });
+        .querySelector(".md-dropdown")!
+        .classList.remove("md-dropdown-hidden")
+    })
 }

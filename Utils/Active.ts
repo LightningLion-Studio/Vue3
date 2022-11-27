@@ -1,4 +1,4 @@
-import copyer from 'clipboard-copy'
+import copyer from "clipboard-copy"
 
 export function copyToClip(func: Function) {
   copyer("LightningLion")

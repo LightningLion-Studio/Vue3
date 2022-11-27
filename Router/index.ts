@@ -67,6 +67,14 @@ const router = createRouter({
         title: "文章详情",
       },
     },
+    {
+      name: "TopicSingle",
+      path: "/topic/:id",
+      component: () => import("@/Pages/Circle/SingleTopic.vue"),
+      meta: {
+        title: "帖子详情",
+      },
+    },
   ],
 })
 

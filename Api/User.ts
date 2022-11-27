@@ -1,5 +1,6 @@
 import axios from "../Utils/Axios"
 import storage from "../Utils/Storage"
+import { TypeRequest } from "../Types/main"
 const cookie = storage.parse("token")
 
 /**
@@ -84,7 +85,7 @@ interface RegisterParams {
   email: String
   code: String
 }
-export async function Register(data: RegisterParams): Promise<object> {
+export async function Register(data: RegisterParams): Promise<TypeRequest> {
   return await axios({
     method: "get",
     url: "/newuser/register",
@@ -94,5 +95,19 @@ export async function Register(data: RegisterParams): Promise<object> {
       email: data.email,
       code: data.code,
     },
+  })
+}
+
+/**
+ * 获取用户信息
+ *
+ * @author Zero
+ * @since 2022
+ */
+export async function GetUserSingleInfo(id: number): Promise<TypeRequest> {
+  return await axios({
+    method: "get",
+    url: "/user/info",
+    params: { id },
   })
 }

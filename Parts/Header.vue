@@ -79,24 +79,24 @@ export default {
   font-size: 17px;
   color: #fff;
   box-shadow: 0 0 40px #00000052;
-	.text-container {
-		position: absolute;
-		width: 100%;
-	}
+  .text-container {
+    position: absolute;
+    width: 100%;
+  }
   .text {
     position: relative;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
-		margin-left: 40px;
-		margin-right: 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 40px;
+    margin-right: 40px;
   }
   .left {
     z-index: 999;
-		height: 100%;
-		align-items: center;
-		justify-content: center;
-		display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
 }
 </style>
