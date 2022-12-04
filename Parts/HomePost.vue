@@ -7,6 +7,7 @@
       :title="item.title"
       :cover="item.poster"
       type="poster"
+			@click="$router.push('/post/' + item.id)"
     >
       {{ item.data }}
     </Carder>
