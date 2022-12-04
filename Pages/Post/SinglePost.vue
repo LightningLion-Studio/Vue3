@@ -12,6 +12,9 @@
             </n-icon>
           </n-avatar>
         </template>
+				<template #header-extra>
+					<n-button type="primary" size="small">关注</n-button>
+				</template>
       </n-thing>
       <MdEditor previewOnly theme="dark" v-model="data.data" />
     </div>
