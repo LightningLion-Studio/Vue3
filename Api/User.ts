@@ -125,3 +125,21 @@ export async function GetUserPost(id: number): Promise<TypeRequest> {
     url: "/post/user/" + id
   })
 }
+
+/**
+ * 删除用户文章
+ *
+ * @author Zero
+ * @since 2022
+ * @return Promise<TypeRequest>
+ */
+export async function DeleteUserPost(id: number): Promise<TypeRequest> {
+	return await axios({
+		method: "delete",
+		url: "/post",
+		params: {
+			cookie:cookie.token,
+			id
+		}
+	})
+}

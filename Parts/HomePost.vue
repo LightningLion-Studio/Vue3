@@ -6,7 +6,7 @@
       :key="index"
       :title="item.title"
       :cover="item.poster"
-      type="poster"
+      :type="item.type"
 			@click="$router.push('/post/' + item.id)"
     >
       {{ item.data }}
@@ -29,10 +29,20 @@ export default {
   },
   async mounted() {
     const list: object = await GetPost()
-    // 去除空格
+
+		// 数据滤子
     for (let i = 0; i < list.data.data.length; i++) {
+			// 去除空格
       list.data.data[i].data = list.data.data[i].data.replace(/\s*/g, "")
-    }
+    	// 筛选封面是否有图片
+			if (list.data.data[i].poster) {
+				list.data.data[i].type = 'poster'
+			} else {
+				list.data.data[i].type = ''
+			}
+		}
+
+		// 赋值给Vue
     this.list = list.data.data
     this.load = false
     this.show = true
