@@ -12,9 +12,12 @@
             </n-icon>
           </n-avatar>
         </template>
-				<template #header-extra>
-					<n-button type="primary" size="small">关注</n-button>
-				</template>
+        <template #header-extra>
+          <n-space>
+            <n-button type="primary" size="small">关注</n-button>
+            <n-button size="small">私信</n-button>
+          </n-space>
+        </template>
       </n-thing>
       <MdEditor previewOnly theme="dark" v-model="data.data" />
     </div>
@@ -45,12 +48,12 @@ const user = ref({})
  */
 async function requester() {
   const request = await GetSinglePost(route.params.id)
-	const userReq = await GetUserSingleInfo(request.data.data.author)
+  const userReq = await GetUserSingleInfo(request.data.data.author)
   if (request.data.code !== 200) {
     message.error(request.data.message)
     return
   }
-	user.value = userReq.data.data
+  user.value = userReq.data.data
   data.value = request.data.data
 }
 
