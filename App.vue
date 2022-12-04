@@ -1,11 +1,13 @@
 <template>
   <n-config-provider :theme="darkTheme" :theme-overrides="themeOverrides">
     <n-message-provider>
-      <router-view v-slot="{ Component }">
-        <transition appear mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
+      <n-dialog-provider>
+        <router-view v-slot="{ Component }">
+          <transition appear mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </router-view>
+      </n-dialog-provider>
     </n-message-provider>
   </n-config-provider>
 </template>

@@ -32,12 +32,19 @@
       :bottom="70"
       style="right: 20px"
     >
-      <n-button size="large" circle type="primary">
+      <n-button
+        @click="$router.push('/post/newdraft')"
+        style="height: 45px"
+        size="large"
+        round
+        type="primary"
+      >
         <template #icon>
           <n-icon>
             <Add />
           </n-icon>
         </template>
+        新建草稿
       </n-button>
     </n-affix>
   </div>

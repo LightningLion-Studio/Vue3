@@ -62,3 +62,21 @@ export async function newDraft(
     data: { title, data, comment, poster, id, category },
   })
 }
+
+/**
+ * 将草稿放入待审列表
+ *
+ * @author Zero
+ * @since 2022
+ * @return Promise<TypeRequest>
+ */
+export async function PutPostCheck(id: number): Promise<TypeRequest> {
+  return await axios({
+    method: "post",
+    url: "/post/single",
+    params: {
+      cookie: cookie.token,
+      id,
+    },
+  })
+}

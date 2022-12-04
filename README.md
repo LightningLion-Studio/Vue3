@@ -20,29 +20,29 @@
 ##启动项目
 
 ```sh
-yarn
+npm i
 ```
 
 ### 本运行
 
 ```sh
-yarn dev
+npm run dev
 ```
 
 ### 打包编译
 
 ```sh
-yarn build
+npm run build
 ```
 
 ### 单元测试，请参考 [Vitest](https://vitest.dev/)
 
 ```sh
-yarn test:unit
+npm run test:unit
 ```
 
 ### 格式化工具请参考 [ESLint](https://eslint.org/)
 
 ```sh
-yarn lint
+npm run lint
 ```

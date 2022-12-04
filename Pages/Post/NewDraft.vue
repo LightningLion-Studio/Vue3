@@ -14,6 +14,7 @@
           theme="dark"
           :toolbars="toolbar"
         />
+        <n-select disabled size="large" placeholder="分类功能正在开发中" />
         <n-button
           :loading="saveButtonDisabled"
           block
@@ -33,6 +34,12 @@
   margin-top: 50px;
   .md-editor {
     background: #242424;
+  }
+  .md-editor-dark {
+    --md-color: #ffffffd1;
+    .default-theme {
+      color: #ffffffd1;
+    }
   }
   .md-editor-fullscreen {
     z-index: 99999999999;

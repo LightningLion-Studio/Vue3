@@ -12,7 +12,7 @@ const cookie = storage.parse("token")
 export async function Login(
   username: String,
   password: String,
-): Promise<object> {
+): Promise<TypeRequest> {
   return await axios({
     method: "get",
     params: {
@@ -29,7 +29,7 @@ export async function Login(
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function UserInfo(): Promise<object> {
+export async function UserInfo(): Promise<TypeRequest> {
   return await axios.get("/user", {
     params: {
       cookie: cookie.token,
@@ -45,7 +45,7 @@ export async function UserInfo(): Promise<object> {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function CheckName(username: String): Promise<object> {
+export async function CheckName(username: String): Promise<TypeRequest> {
   return await axios({
     method: "get",
     url: "/newuser/checkname",
@@ -62,7 +62,7 @@ export async function CheckName(username: String): Promise<object> {
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
-export async function SendMail(email: String): Promise<object> {
+export async function SendMail(email: String): Promise<TypeRequest> {
   return await axios({
     method: "get",
     url: "/newuser/sendmail",
@@ -110,4 +110,36 @@ export async function GetUserSingleInfo(id: number): Promise<TypeRequest> {
     url: "/user/info",
     params: { id },
   })
+}
+
+/**
+ * 获取用户文章
+ *
+ * @author Zero
+ * @since 2022
+ * @return Promise<TypeRequest>
+ */
+export async function GetUserPost(id: number): Promise<TypeRequest> {
+  return await axios({
+    method: "get",
+    url: "/post/user/" + id
+  })
+}
+
+/**
+ * 删除用户文章
+ *
+ * @author Zero
+ * @since 2022
+ * @return Promise<TypeRequest>
+ */
+export async function DeleteUserPost(id: number): Promise<TypeRequest> {
+	return await axios({
+		method: "delete",
+		url: "/post",
+		params: {
+			cookie:cookie.token,
+			id
+		}
+	})
 }
