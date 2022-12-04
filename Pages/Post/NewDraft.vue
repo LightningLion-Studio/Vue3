@@ -14,7 +14,7 @@
           theme="dark"
           :toolbars="toolbar"
         />
-        <n-select size="large" placeholder="分类功能正在开发中" />
+        <n-select disabled size="large" placeholder="分类功能正在开发中" />
         <n-button
           :loading="saveButtonDisabled"
           block
