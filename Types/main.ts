@@ -31,4 +31,4 @@ interface TypeRequest {
   }
 }
 
-export { TypeCookie, TypeRequest }
+export type { TypeCookie, TypeRequest }

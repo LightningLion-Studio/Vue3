@@ -14,7 +14,7 @@
           <User />
         </n-icon>
       </n-avatar>
-      <md-editor v-model="text" theme="dark" preview-only />
+      <div>{{ text }}</div>
     </div>
   </div>
 </template>
