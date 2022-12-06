@@ -13,7 +13,7 @@ interface TypeCookie {
 /**
  * 基础数据返回结构定义
  *
- * @returns Promise<any>
+ * @returns Promise<object>
  * @author Zero
  * @since 2022
  */

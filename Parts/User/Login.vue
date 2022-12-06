@@ -20,13 +20,15 @@
         @click="loginAction()"
         type="primary"
         size="large"
-        circle
+        :round="!loading"
+				:circle="loading"
       >
         <template #icon>
           <n-icon>
             <KeyboardArrowRightSharp />
           </n-icon>
         </template>
+				<div v-if="!loading">登录</div>
       </n-button>
     </div>
   </div>
