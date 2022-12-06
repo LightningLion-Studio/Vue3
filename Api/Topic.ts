@@ -5,8 +5,9 @@ import { RouteParamValue } from "vue-router"
 const cookie: TypeCookie = storage.parse("token")
 
 /**
- * 获取话题
+ * 获取帖子列表
  *
+ * @return {Promise<TypeRequest>}
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
@@ -22,10 +23,16 @@ export async function GetTopic(
   })
 }
 
-
+/**
+ * 获取话题列表
+ *
+ * @return {Promise<TypeRequest>} 
+ * @author Zero <1203970284@qq.com>
+ * @since 2022
+ */
 
 /**
- * 获取单个话题
+ * 获取单个帖子
  *
  * @return {Promise<TypeRequest>} 
  * @author Zero <1203970284@qq.com>
