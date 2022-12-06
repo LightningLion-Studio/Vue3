@@ -22,6 +22,15 @@ export async function GetTopic(
   })
 }
 
+
+
+/**
+ * 获取单个话题
+ *
+ * @return {Promise<TypeRequest>} 
+ * @author Zero <1203970284@qq.com>
+ * @since 2022
+ */
 export async function GetSingleTopic(
   id: string | RouteParamValue[] | number,
 ): Promise<TypeRequest> {
