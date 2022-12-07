@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider :theme="darkTheme" :theme-overrides="themeOverrides">
+  <n-config-provider :theme="darkTheme" :theme-overrides="themeOverrides" id="root">
     <n-message-provider>
       <n-dialog-provider>
         <router-view v-slot="{ Component }">
@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
@@ -33,5 +33,8 @@ export default {
 .v-enter-active,
 .v-leave-active {
   transition: all 0.35s;
+}
+#root {
+	padding-bottom: 60px;
 }
 </style>

@@ -31,6 +31,19 @@ export async function GetTopic(
  * @since 2022
  */
 
+export async function GetTag(
+	order: Number,
+  limit: Number,
+  offset: Number
+):Promise<TypeRequest> {
+	return await axios({
+		method: "get",
+		url: "/tag",
+		params: { order, limit, offset }
+	})
+}
+
+
 /**
  * 获取单个帖子
  *

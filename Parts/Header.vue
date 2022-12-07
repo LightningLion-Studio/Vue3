@@ -90,6 +90,7 @@ export default {
     white-space: nowrap;
     margin-left: 40px;
     margin-right: 40px;
+	  text-align: center;
   }
   .left {
     z-index: 999;

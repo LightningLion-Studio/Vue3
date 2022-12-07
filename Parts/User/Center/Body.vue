@@ -71,6 +71,9 @@
         </n-list-item>
       </n-list>
     </n-tab-pane>
+		<n-tab-pane name="topics" tab="我的帖子">
+			
+		</n-tab-pane>
     <n-tab-pane name="chap2" tab="关注的人">
       <n-empty
         description="没有任何关注的人"
