@@ -1,6 +1,6 @@
 import axios from "../Utils/Axios"
 import storage from "../Utils/Storage"
-import { TypeRequest } from "../Types/main"
+import type { TypeRequest } from "../Types/main"
 const cookie = storage.parse("token")
 
 /**
@@ -122,7 +122,7 @@ export async function GetUserSingleInfo(id: number): Promise<TypeRequest> {
 export async function GetUserPost(id: number): Promise<TypeRequest> {
   return await axios({
     method: "get",
-    url: "/post/user/" + id
+    url: "/post/user/" + id,
   })
 }
 
@@ -134,12 +134,28 @@ export async function GetUserPost(id: number): Promise<TypeRequest> {
  * @return Promise<TypeRequest>
  */
 export async function DeleteUserPost(id: number): Promise<TypeRequest> {
-	return await axios({
-		method: "delete",
-		url: "/post",
-		params: {
-			cookie:cookie.token,
-			id
-		}
-	})
+  return await axios({
+    method: "delete",
+    url: "/post",
+    params: {
+      cookie: cookie.token,
+      id,
+    },
+  })
+}
+
+/**
+ * 获取用户统计数据
+ *
+ * @author Zero
+ * @since 2022
+ * @return Promise<TypeRequest>
+ */
+export async function GetUserStatic(
+  id: number = cookie.id,
+): Promise<TypeRequest> {
+  return await axios({
+    url: "/follow/" + id,
+    method: "get",
+  })
 }

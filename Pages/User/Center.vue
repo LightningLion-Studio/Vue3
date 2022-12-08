@@ -84,7 +84,7 @@ export default {
   }
   .saying {
     margin-top: 8px;
-    font-size: @font - 6px;
+    font-size: @font - 10px;
   }
   .n-thing {
     margin-bottom: 10px;

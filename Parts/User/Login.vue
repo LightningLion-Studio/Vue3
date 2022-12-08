@@ -21,14 +21,14 @@
         type="primary"
         size="large"
         :round="!loading"
-				:circle="loading"
+        :circle="loading"
       >
         <template #icon>
           <n-icon>
             <KeyboardArrowRightSharp />
           </n-icon>
         </template>
-				<div v-if="!loading">登录</div>
+        <div v-if="!loading">登录</div>
       </n-button>
     </div>
   </div>

@@ -54,8 +54,8 @@ onUpdated(func)
     filter: brightness(0.5);
     border-radius: 18px;
   }
-	.title {
-		margin-top: 0!important;
-	}
+  .title {
+    margin-top: 0 !important;
+  }
 }
 </style>

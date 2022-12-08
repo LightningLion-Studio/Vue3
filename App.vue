@@ -1,5 +1,9 @@
 <template>
-  <n-config-provider :theme="darkTheme" :theme-overrides="themeOverrides" id="root">
+  <n-config-provider
+    :theme="darkTheme"
+    :theme-overrides="themeOverrides"
+    id="root"
+  >
     <n-message-provider>
       <n-dialog-provider>
         <router-view v-slot="{ Component }">
@@ -35,6 +39,6 @@ export default {
   transition: all 0.35s;
 }
 #root {
-	padding-bottom: 60px;
+  padding-bottom: 60px;
 }
 </style>

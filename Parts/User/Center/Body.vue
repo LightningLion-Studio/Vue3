@@ -53,8 +53,8 @@
                   size="small"
                   type="success"
                   v-if="item.status === 'draft'"
-									@click="toChecker(item.id)"
-									:loading="checkButton"
+                  @click="toChecker(item.id)"
+                  :loading="checkButton"
                 >
                   提交审核
                 </n-button>
@@ -71,9 +71,7 @@
         </n-list-item>
       </n-list>
     </n-tab-pane>
-		<n-tab-pane name="topics" tab="我的帖子">
-			
-		</n-tab-pane>
+    <n-tab-pane name="topics" tab="我的帖子"> </n-tab-pane>
     <n-tab-pane name="chap2" tab="关注的人">
       <n-empty
         description="没有任何关注的人"
@@ -131,20 +129,20 @@ const twoConfirm = uid => {
 
 // 提交审核
 const checkButton = ref(false)
-const toChecker = async (uid) => {
-	checkButton.value = true
-	try {
-		const req = await PutPostCheck(uid)
-		if (req.data.code !== 200) {
-			message.error(req.data.message)
-		} else {
-			message.success(req.data.message)
-		}
-	} catch (err) {
-		checkButton.value = false
-		message.error(err)
-	}
-	await getPost()
-	checkButton.value = false
+const toChecker = async uid => {
+  checkButton.value = true
+  try {
+    const req = await PutPostCheck(uid)
+    if (req.data.code !== 200) {
+      message.error(req.data.message)
+    } else {
+      message.success(req.data.message)
+    }
+  } catch (err) {
+    checkButton.value = false
+    message.error(err)
+  }
+  await getPost()
+  checkButton.value = false
 }
 </script>

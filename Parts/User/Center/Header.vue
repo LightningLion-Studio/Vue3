@@ -18,10 +18,10 @@
       <!--描述-->
       <template #description>
         <n-space>
-          <n-tag size="large" :bordered="false" type="primary">
+          <n-tag :bordered="false" type="primary">
             Lv {{ info.level }}
           </n-tag>
-          <n-tag size="large" v-if="info.level == 10"> 管理员 </n-tag>
+          <n-tag v-if="info.level == 10"> 管理员 </n-tag>
         </n-space>
         <div class="saying">{{ info.saying }}</div>
       </template>
@@ -30,23 +30,25 @@
     <!--统计数据-->
     <n-grid>
       <n-gi class="static" :span="6">
-        <n-statistic label="文章" :value="0" />
+        <n-statistic label="文章">
+          <n-number-animation ref="numberAnimationInstRef" :from="0" :to="1" />
+        </n-statistic>
       </n-gi>
       <n-gi class="static" :span="6">
         <n-statistic label="草稿" :value="0" />
       </n-gi>
       <n-gi class="static" :span="6">
-        <n-statistic label="粉丝" :value="0" />
+        <n-statistic label="粉丝" :value="fans" />
       </n-gi>
       <n-gi class="static" :span="6">
-        <n-statistic label="关注" :value="0" />
+        <n-statistic label="关注" :value="follow" />
       </n-gi>
     </n-grid>
   </div>
 </template>
 
 <script>
-import { UserInfo } from "@/Api"
+import { UserInfo, GetUserStatic } from "@/Api"
 import User from "@vicons/carbon/User"
 import { useMessage } from "naive-ui"
 
@@ -54,6 +56,10 @@ export default {
   data() {
     return {
       info: [],
+      posts: 0,
+      drafts: 0,
+      follow: 0,
+      fans: 0,
     }
   },
   setup() {
@@ -69,6 +75,10 @@ export default {
       localStorage.removeItem("token")
       this.$router.push("/")
     }
+
+    const statics = await GetUserStatic()
+    this.follow = statics.data.follow
+    this.fans = statics.data.fans
   },
   components: { User },
 }

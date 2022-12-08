@@ -26,28 +26,27 @@ export async function GetTopic(
 /**
  * 获取话题列表
  *
- * @return {Promise<TypeRequest>} 
+ * @return {Promise<TypeRequest>}
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
 
 export async function GetTag(
-	order: Number,
+  order: Number,
   limit: Number,
-  offset: Number
-):Promise<TypeRequest> {
-	return await axios({
-		method: "get",
-		url: "/tag",
-		params: { order, limit, offset }
-	})
+  offset: Number,
+): Promise<TypeRequest> {
+  return await axios({
+    method: "get",
+    url: "/tag",
+    params: { order, limit, offset },
+  })
 }
-
 
 /**
  * 获取单个帖子
  *
- * @return {Promise<TypeRequest>} 
+ * @return {Promise<TypeRequest>}
  * @author Zero <1203970284@qq.com>
  * @since 2022
  */
