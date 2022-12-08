@@ -1,7 +1,7 @@
 import axios from "../Utils/Axios"
 import storage from "../Utils/Storage"
-import type { TypeRequest } from "../Types/main"
-const cookie = storage.parse("token")
+import type { TypeCookie, TypeRequest } from "../Types/main"
+const cookie:TypeCookie = storage.parse("token")
 
 /**
  * 登录
@@ -158,4 +158,22 @@ export async function GetUserStatic(
     url: "/follow/" + id,
     method: "get",
   })
+}
+
+/**
+ * 获取用户关注列表
+ *
+ * @author Zero
+ * @since 2022
+ * @return Promise<TypeRequest>
+ */
+export async function GetUserFollowList(id = cookie.id):Promise<TypeRequest> {
+   return await axios({
+		 url: "/follow",
+		 method: "get",
+		 params: {
+			 type: 'follow',
+			 id
+		 }
+	 })
 }

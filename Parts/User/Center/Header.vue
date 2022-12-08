@@ -31,7 +31,7 @@
     <n-grid>
       <n-gi class="static" :span="6">
         <n-statistic label="文章">
-          <n-number-animation ref="numberAnimationInstRef" :from="0" :to="1" />
+          <n-number-animation :from="0" :to="1" />
         </n-statistic>
       </n-gi>
       <n-gi class="static" :span="6">
@@ -41,7 +41,9 @@
         <n-statistic label="粉丝" :value="fans" />
       </n-gi>
       <n-gi class="static" :span="6">
-        <n-statistic label="关注" :value="follow" />
+        <n-statistic label="关注">
+					<n-number-animation :from="0" :to="follow" />
+				</n-statistic>
       </n-gi>
     </n-grid>
   </div>
