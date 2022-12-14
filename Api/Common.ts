@@ -12,3 +12,15 @@ export async function GetApp(name: string): Promise<object> {
     params: { name },
   })
 }
+
+/**
+ * 获取公告
+ *
+ * @params
+ * @returns [object]
+ * @author Zero
+ * @since 2022
+ */
+export async function GetAnnouncement():Promise<object> {
+  return await axios.get("/announcement")
+}

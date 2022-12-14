@@ -9,6 +9,7 @@
       </n-text>
       <n-h1 class="h1"> 心电社区 </n-h1>
       <HomeSwiper />
+      <n-alert :bordered="false" type="info" :title="data" class="post" />
       <AppGird class="post" />
       <HomePost class="post" />
     </div>
@@ -20,6 +21,7 @@ import HomeSwiper from "@/Parts/HomeSwiper.vue"
 import AppGird from "@/Parts/AppGird.vue"
 import HomePost from "@/Parts/HomePost.vue"
 import BottomBar from "@/Parts/BottomBar.vue"
+import { GetAnnouncement } from "@/Api"
 
 export default {
   components: {
@@ -27,6 +29,15 @@ export default {
     HomeSwiper,
     HomePost,
     AppGird,
+  },
+  data() {
+    return {
+      data: '公告加载中...'
+    }
+  },
+  async mounted() {
+    const request = await GetAnnouncement()
+    this.data = request.data.data
   },
   methods: {
     parseWeek() {

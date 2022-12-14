@@ -1,5 +1,8 @@
 {
 	"Tabs": {
 		"tabBorderRadius": "8px"
-	}
+	},
+  "Alert": {
+    "borderRadius": "8px"
+  }
 }
