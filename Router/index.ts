@@ -75,6 +75,14 @@ const router = createRouter({
         title: "帖子详情",
       },
     },
+    {
+      name: "setting",
+      path: "/user/setting",
+      component: () => import("@/Pages/User/Setting.vue"),
+      meta: {
+        title: "设置",
+      },
+    },
   ],
 })
 

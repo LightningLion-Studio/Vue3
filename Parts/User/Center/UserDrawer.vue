@@ -6,7 +6,7 @@
       </n-icon>
       <n-text strong> 登出 </n-text>
     </n-grid-item>
-    <n-grid-item class="item">
+    <n-grid-item class="item" @click="$router.push('/user/setting')">
       <n-icon size="40">
         <Settings16Regular />
       </n-icon>

@@ -20,7 +20,7 @@
 import { darkTheme } from "naive-ui"
 import config from "./themeconfig.json"
 export default {
-  data() {
+  setup() {
     return {
       darkTheme,
       themeOverrides: config,

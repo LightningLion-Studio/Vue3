@@ -87,6 +87,13 @@ export default {
     align-items: center;
   }
 }
+@media all and (display-mode: fullscreen) {
+  /*@supports (bottom: env(safe-area-inset-bottom)) {*/
+    .bottom-bar {
+      padding-bottom: 30px!important;
+    }
+  /*}*/
+}
 .active {
   padding-top: 15px;
   padding-bottom: 15px;
